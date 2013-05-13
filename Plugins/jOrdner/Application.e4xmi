@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_tOrv4Ls2EeKzC_HKUzmhRg" elementId="org.eclipse.e4.ide.application" bindingContexts="_tOsW8Ls2EeKzC_HKUzmhRg">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_tOrv4bs2EeKzC_HKUzmhRg" label="com.gh.jordner" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_tOrv4bs2EeKzC_HKUzmhRg" label="jOrdner" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_tOs-B7s2EeKzC_HKUzmhRg">
       <children xsi:type="advanced:Perspective" xmi:id="_tOs-CLs2EeKzC_HKUzmhRg">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_tOs-Cbs2EeKzC_HKUzmhRg">
-          <children xsi:type="basic:PartStack" xmi:id="_tOs-Crs2EeKzC_HKUzmhRg">
-            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.parts.SamplePart" label="Sample Part"/>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_tOs-Cbs2EeKzC_HKUzmhRg" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_tOs-Crs2EeKzC_HKUzmhRg" elementId="jordner.partstack.links">
+            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" elementId="jordner.part.folderlist" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.parts.FolderListPart" label="Verwaltete Folder"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_TXDmULwBEeKc9-EJnyWFjw" elementId="jordner.partstack.rechts">
+            <children xsi:type="basic:Part" xmi:id="_T-FKELwBEeKc9-EJnyWFjw" elementId="jordner.part.details" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.parts.DetailsPart" label="Details"/>
           </children>
         </children>
       </children>
