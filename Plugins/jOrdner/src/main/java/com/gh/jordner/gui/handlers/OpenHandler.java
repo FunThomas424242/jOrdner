@@ -43,7 +43,7 @@ public class OpenHandler {
 			dao.create(verzeichnis);
 			printTable(part);
 			part.addVerzeichnisEintrag(verzeichnis);
-			printTable(part);			
+			printTable(part);		
 		}
 	}
 

@@ -33,9 +33,6 @@ private static TableViewer tableViewer;
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout());
 
-//		label = new Label(parent, SWT.NONE);
-//		label.setText("Verzeichnisse");
-//
 		tableViewer = new TableViewer(parent);
 		tableViewer.add("Sample item 1");
 		tableViewer.add("Sample item 2");
@@ -56,10 +53,9 @@ private static TableViewer tableViewer;
 	
 	public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
 		final String verzeichnisName=verzeichnis.getName();
-//		tableViewer = new TableViewer(parent);
+		tableViewer.replace("test1", 0);
 		tableViewer.add(verzeichnisName);
-//		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
-		tableViewer.refresh(true);
+		tableViewer.getTable().pack();
 		System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
 	}
 }
