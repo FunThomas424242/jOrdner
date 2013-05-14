@@ -12,6 +12,7 @@ package com.gh.jordner.gui.handlers;
 
 import java.io.File;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -19,13 +20,26 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
+import com.gh.jordner.gui.parts.VerzeichnisPart;
+import com.gh.jordner.integration.dao.VerzeichnisServiceDAOImpl;
+import com.gh.jordner.integration.entity.Verzeichnis;
 
 public class OpenHandler {
 
-	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+	@Inject
+	VerzeichnisServiceDAOImpl dao;
 
-		final FolderBrowser dialog=new FolderBrowser(shell);
-		final File folder=dialog.getFolder(null);
+	@Execute
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
+			@Named VerzeichnisPart part) {
+
+		final FolderBrowser dialog = new FolderBrowser(shell);
+		final File folder = dialog.getFolder(null);
+		if (folder != null) {
+			final Verzeichnis verzeichnis = new Verzeichnis();
+			verzeichnis.setName(folder.getName());
+			dao.create(verzeichnis);
+			part.addVerzeichnisEintrag(verzeichnis);
+		}
 	}
 }
