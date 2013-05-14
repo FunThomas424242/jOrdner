@@ -5,10 +5,10 @@
       <children xsi:type="advanced:Perspective" xmi:id="_tOs-CLs2EeKzC_HKUzmhRg">
         <children xsi:type="basic:PartSashContainer" xmi:id="_tOs-Cbs2EeKzC_HKUzmhRg" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_tOs-Crs2EeKzC_HKUzmhRg" elementId="jordner.partstack.links">
-            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" elementId="jordner.part.folderlist" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.parts.FolderListPart" label="Verwaltete Folder"/>
+            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" elementId="jordner.part.folderlist" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.parts.FolderListPart" label="Verwaltete Folder"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_TXDmULwBEeKc9-EJnyWFjw" elementId="jordner.partstack.rechts">
-            <children xsi:type="basic:Part" xmi:id="_T-FKELwBEeKc9-EJnyWFjw" elementId="jordner.part.details" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.parts.DetailsPart" label="Details"/>
+            <children xsi:type="basic:Part" xmi:id="_T-FKELwBEeKc9-EJnyWFjw" elementId="jordner.part.details" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.parts.DetailsPart" label="Details"/>
           </children>
         </children>
       </children>
@@ -30,10 +30,10 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_tOsW9Ls2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.handlers.QuitHandler" command="_tOsW87s2EeKzC_HKUzmhRg"/>
-  <handlers xmi:id="_tOsW-Ls2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.handlers.OpenHandler" command="_tOsW97s2EeKzC_HKUzmhRg"/>
-  <handlers xmi:id="_tOsW-7s2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.handlers.SaveHandler" command="_tOsW-rs2EeKzC_HKUzmhRg"/>
-  <handlers xmi:id="_tOsW_rs2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.handlers.AboutHandler" command="_tOsW_bs2EeKzC_HKUzmhRg"/>
+  <handlers xmi:id="_tOsW9Ls2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.handlers.QuitHandler" command="_tOsW87s2EeKzC_HKUzmhRg"/>
+  <handlers xmi:id="_tOsW-Ls2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.handlers.OpenHandler" command="_tOsW97s2EeKzC_HKUzmhRg"/>
+  <handlers xmi:id="_tOsW-7s2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.handlers.SaveHandler" command="_tOsW-rs2EeKzC_HKUzmhRg"/>
+  <handlers xmi:id="_tOsW_rs2EeKzC_HKUzmhRg" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.handlers.AboutHandler" command="_tOsW_bs2EeKzC_HKUzmhRg"/>
   <bindingTables xmi:id="_tOsW9bs2EeKzC_HKUzmhRg" bindingContext="_tOsW8Ls2EeKzC_HKUzmhRg">
     <bindings xmi:id="_tOsW9rs2EeKzC_HKUzmhRg" keySequence="M1+Q" command="_tOsW87s2EeKzC_HKUzmhRg"/>
     <bindings xmi:id="_tOsW-bs2EeKzC_HKUzmhRg" keySequence="M1+O" command="_tOsW97s2EeKzC_HKUzmhRg"/>

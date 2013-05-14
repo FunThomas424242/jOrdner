@@ -1,4 +1,4 @@
-package com.gh.devtools.utils;
+package com.gh.devtools.lib.swtextension;
 
 import java.io.File;
 

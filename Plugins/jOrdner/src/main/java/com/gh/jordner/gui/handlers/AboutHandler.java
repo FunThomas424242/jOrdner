@@ -8,24 +8,18 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package com.gh.jordner.handlers;
-
-import java.io.File;
+package com.gh.jordner.gui.handlers;
 
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import com.gh.devtools.utils.FolderBrowser;
-
-public class OpenHandler {
-
+public class AboutHandler {
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
-
-		final FolderBrowser dialog=new FolderBrowser(shell);
-		final File folder=dialog.getFolder(null);
+		MessageDialog.openInformation(shell, "About", "Eclipse 4 Application example.");
 	}
 }

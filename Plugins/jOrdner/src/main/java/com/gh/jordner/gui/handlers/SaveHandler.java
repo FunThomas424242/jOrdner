@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package com.gh.jordner.handlers;
+package com.gh.jordner.gui.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 
