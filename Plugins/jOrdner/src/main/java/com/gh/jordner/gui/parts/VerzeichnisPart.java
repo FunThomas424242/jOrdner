@@ -15,37 +15,27 @@ import javax.annotation.PostConstruct;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
 
 import com.gh.jordner.integration.entity.Verzeichnis;
 
 @Creatable
 public class VerzeichnisPart {
 
-	private Label label;
-	private static TableViewer tableViewer;
+//	private Label label;
+private static TableViewer tableViewer;
 
-//	public VerzeichnisPart(Composite parent) {
-//
-//		// Assuming that dependency injection works
-//		// parent will never be null
-//		System.out.println("Woh! Got Composite via DI.");
-//
-//		// Does it have a layou manager?
-//		System.out.println("Layout: " + parent.getLayout().getClass());
-//	}
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout());
 
-		label = new Label(parent, SWT.NONE);
-		label.setText("Verzeichnisse");
-
+//		label = new Label(parent, SWT.NONE);
+//		label.setText("Verzeichnisse");
+//
 		tableViewer = new TableViewer(parent);
 		tableViewer.add("Sample item 1");
 		tableViewer.add("Sample item 2");
@@ -60,10 +50,15 @@ public class VerzeichnisPart {
 		tableViewer.getTable().setFocus();
 	}
 
+	public TableViewer getTableViewer(){
+		return tableViewer;
+	}
+	
 	public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
 		final String verzeichnisName=verzeichnis.getName();
+//		tableViewer = new TableViewer(parent);
 		tableViewer.add(verzeichnisName);
-		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+//		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
 		tableViewer.refresh(true);
 		System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
 	}

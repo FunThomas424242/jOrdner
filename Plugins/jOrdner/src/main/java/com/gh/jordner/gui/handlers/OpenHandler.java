@@ -18,6 +18,8 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableItem;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
 import com.gh.jordner.gui.parts.VerzeichnisPart;
@@ -31,7 +33,7 @@ public class OpenHandler {
 
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
-			@Named VerzeichnisPart part) {
+			@Named("jordner.part.folderlist") VerzeichnisPart part) {
 
 		final FolderBrowser dialog = new FolderBrowser(shell);
 		final File folder = dialog.getFolder(null);
@@ -39,7 +41,17 @@ public class OpenHandler {
 			final Verzeichnis verzeichnis = new Verzeichnis();
 			verzeichnis.setName(folder.getName());
 			dao.create(verzeichnis);
+			printTable(part);
 			part.addVerzeichnisEintrag(verzeichnis);
+			printTable(part);			
+		}
+	}
+
+	private void printTable(VerzeichnisPart part) {
+		final Table table=part.getTableViewer().getTable();
+		final TableItem[] items = table.getItems();
+		for (TableItem item : items) {
+			System.out.println(item.getText());
 		}
 	}
 }
