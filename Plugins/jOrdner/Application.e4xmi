@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_tOs-CLs2EeKzC_HKUzmhRg">
         <children xsi:type="basic:PartSashContainer" xmi:id="_tOs-Cbs2EeKzC_HKUzmhRg" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_tOs-Crs2EeKzC_HKUzmhRg" elementId="jordner.partstack.links">
-            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" elementId="jordner.part.folderlist" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.parts.FolderListPart" label="Verwaltete Folder"/>
+            <children xsi:type="basic:Part" xmi:id="_tOtlELs2EeKzC_HKUzmhRg" elementId="jordner.part.folderlist" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.parts.VerzeichnisListPart" label="Verwaltete Verzeichnisse"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_TXDmULwBEeKc9-EJnyWFjw" elementId="jordner.partstack.rechts">
             <children xsi:type="basic:Part" xmi:id="_T-FKELwBEeKc9-EJnyWFjw" elementId="jordner.part.details" contributionURI="bundleclass://com.gh.jordner/com.gh.jordner.gui.parts.DetailsPart" label="Details"/>

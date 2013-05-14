@@ -19,7 +19,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
-public class FolderListPart {
+public class VerzeichnisListPart {
 
 	private Label label;
 	private TableViewer tableViewer;
