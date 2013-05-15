@@ -37,8 +37,7 @@ public class OpenHandler {
 	VerzeichnisServiceDAOImpl dao;
 
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
-			@Named("jordner.part.folderlist") VerzeichnisPart part) {
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
 
 		final FolderBrowser dialog = new FolderBrowser(shell);
 		final File folder = dialog.getFolder(null);
@@ -46,19 +45,10 @@ public class OpenHandler {
 			final Verzeichnis verzeichnis = new Verzeichnis();
 			verzeichnis.setName(folder.getName());
 			dao.create(verzeichnis);
-			//printTable(part);
-			//part.addVerzeichnisEintrag(verzeichnis);
-			eventBroker.send("viewcommunication/syncEvent",new Date());
-	        eventBroker.post("viewcommunication/asyncEvent", new Date());
-			//printTable(part);
+			//HINT: http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/
+			eventBroker.send("viewcommunication/syncEvent", verzeichnis);
+			//eventBroker.post("viewcommunication/asyncEvent", verzeichnis);
 		}
 	}
 
-//	private void printTable(VerzeichnisPart part) {
-//		final Table table = part.getTableViewer().getTable();
-//		final TableItem[] items = table.getItems();
-//		for (TableItem item : items) {
-//			System.out.println(item.getText());
-//		}
-//	}
 }

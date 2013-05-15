@@ -27,6 +27,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
+import com.gh.jordner.integration.entity.Verzeichnis;
+
 @Creatable
 public class VerzeichnisPart {
 
@@ -41,34 +43,27 @@ public class VerzeichnisPart {
 		parent.setLayout(new GridLayout());
 
 		tableViewer = new TableViewer(parent);
-		tableViewer.add("Sample item 1");
-		tableViewer.add("Sample item 2");
-		tableViewer.add("Sample item 3");
-		tableViewer.add("Sample item 4");
-		tableViewer.add("Sample item 5");
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
-
-		// parent.setLayout(new FillLayout());
-		// tableViewer = new TableViewer(parent);
 		tableViewer.getTable().setHeaderVisible(true);
 		tableViewer.getTable().setLinesVisible(true);
-		tableViewer.setLabelProvider(new ColumnLabelProvider() {
-			@Override
-			public String getText(Object element) {
-				return DateFormat.getDateTimeInstance().format(element);
-			}
-		});
-
-		// eventBroker.send("viewcommunication/syncEvent",new Date());
-		// eventBroker.post("viewcommunication/asyncEvent", new Date());
 
 	}
 
+	/**
+	 * http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-
+	 * communicate-the-e4-way/
+	 * 
+	 * @param verzeichnis
+	 */
 	@Inject
 	@Optional
-	void eventReceived(@UIEventTopic("viewcommunication/*") Date obj) {
-		tableViewer.add(obj);
-		System.out.println(obj);
+	void eventReceived(
+			@UIEventTopic("viewcommunication/*") Verzeichnis verzeichnis) {
+		final String folderName = verzeichnis.getName();
+		if (!folderName.isEmpty()) {
+			tableViewer.add(folderName);
+		}
+		System.out.println(">" + folderName + "<");
 	}
 
 	@Focus
@@ -76,16 +71,4 @@ public class VerzeichnisPart {
 		tableViewer.getTable().setFocus();
 	}
 
-	// public TableViewer getTableViewer(){
-	// return tableViewer;
-	// }
-
-	// public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
-	// final String verzeichnisName=verzeichnis.getName();
-	// tableViewer.replace("test1", 0);
-	// tableViewer.insert("verzeichnisName", 1);
-	// tableViewer.add(verzeichnisName);
-	// tableViewer.getTable().pack();
-	// System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
-	// }
 }
