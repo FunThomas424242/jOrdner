@@ -54,6 +54,7 @@ private static TableViewer tableViewer;
 	public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
 		final String verzeichnisName=verzeichnis.getName();
 		tableViewer.replace("test1", 0);
+		tableViewer.insert("verzeichnisName", 1);
 		tableViewer.add(verzeichnisName);
 		tableViewer.getTable().pack();
 		System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
