@@ -11,11 +11,13 @@
 package com.gh.jordner.gui.handlers;
 
 import java.io.File;
+import java.util.Date;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
@@ -27,6 +29,9 @@ import com.gh.jordner.integration.dao.VerzeichnisServiceDAOImpl;
 import com.gh.jordner.integration.entity.Verzeichnis;
 
 public class OpenHandler {
+
+	@Inject
+	private IEventBroker eventBroker;
 
 	@Inject
 	VerzeichnisServiceDAOImpl dao;
@@ -41,17 +46,19 @@ public class OpenHandler {
 			final Verzeichnis verzeichnis = new Verzeichnis();
 			verzeichnis.setName(folder.getName());
 			dao.create(verzeichnis);
-			printTable(part);
-			part.addVerzeichnisEintrag(verzeichnis);
-			printTable(part);		
+			//printTable(part);
+			//part.addVerzeichnisEintrag(verzeichnis);
+			eventBroker.send("viewcommunication/syncEvent",new Date());
+	        eventBroker.post("viewcommunication/asyncEvent", new Date());
+			//printTable(part);
 		}
 	}
 
-	private void printTable(VerzeichnisPart part) {
-		final Table table=part.getTableViewer().getTable();
-		final TableItem[] items = table.getItems();
-		for (TableItem item : items) {
-			System.out.println(item.getText());
-		}
-	}
+//	private void printTable(VerzeichnisPart part) {
+//		final Table table = part.getTableViewer().getTable();
+//		final TableItem[] items = table.getItems();
+//		for (TableItem item : items) {
+//			System.out.println(item.getText());
+//		}
+//	}
 }

@@ -10,24 +10,31 @@
  *******************************************************************************/
 package com.gh.jordner.gui.parts;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Shell;
-
-import com.gh.jordner.integration.entity.Verzeichnis;
 
 @Creatable
 public class VerzeichnisPart {
 
-//	private Label label;
-private static TableViewer tableViewer;
+	@Inject
+	private IEventBroker eventBroker;
 
+	// private Label label;
+	private static TableViewer tableViewer;
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
@@ -40,6 +47,28 @@ private static TableViewer tableViewer;
 		tableViewer.add("Sample item 4");
 		tableViewer.add("Sample item 5");
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+
+		// parent.setLayout(new FillLayout());
+		// tableViewer = new TableViewer(parent);
+		tableViewer.getTable().setHeaderVisible(true);
+		tableViewer.getTable().setLinesVisible(true);
+		tableViewer.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				return DateFormat.getDateTimeInstance().format(element);
+			}
+		});
+
+		// eventBroker.send("viewcommunication/syncEvent",new Date());
+		// eventBroker.post("viewcommunication/asyncEvent", new Date());
+
+	}
+
+	@Inject
+	@Optional
+	void eventReceived(@UIEventTopic("viewcommunication/*") Date obj) {
+		tableViewer.add(obj);
+		System.out.println(obj);
 	}
 
 	@Focus
@@ -47,16 +76,16 @@ private static TableViewer tableViewer;
 		tableViewer.getTable().setFocus();
 	}
 
-	public TableViewer getTableViewer(){
-		return tableViewer;
-	}
-	
-	public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
-		final String verzeichnisName=verzeichnis.getName();
-		tableViewer.replace("test1", 0);
-		tableViewer.insert("verzeichnisName", 1);
-		tableViewer.add(verzeichnisName);
-		tableViewer.getTable().pack();
-		System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
-	}
+	// public TableViewer getTableViewer(){
+	// return tableViewer;
+	// }
+
+	// public void addVerzeichnisEintrag(Verzeichnis verzeichnis) {
+	// final String verzeichnisName=verzeichnis.getName();
+	// tableViewer.replace("test1", 0);
+	// tableViewer.insert("verzeichnisName", 1);
+	// tableViewer.add(verzeichnisName);
+	// tableViewer.getTable().pack();
+	// System.out.println("Verzeichniseintrag "+verzeichnisName+" hinzugefügt.");
+	// }
 }
