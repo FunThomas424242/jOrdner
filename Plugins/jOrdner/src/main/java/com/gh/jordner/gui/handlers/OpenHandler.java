@@ -11,7 +11,6 @@
 package com.gh.jordner.gui.handlers;
 
 import java.io.File;
-import java.util.Date;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,13 +19,11 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableItem;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
-import com.gh.jordner.gui.parts.VerzeichnisPart;
+import com.gh.jordner.api.Verzeichnis;
 import com.gh.jordner.integration.dao.VerzeichnisServiceDAOImpl;
-import com.gh.jordner.integration.entity.Verzeichnis;
+import com.gh.jordner.jpa.VerzeichnisImpl;
 
 public class OpenHandler {
 
@@ -42,7 +39,7 @@ public class OpenHandler {
 		final FolderBrowser dialog = new FolderBrowser(shell);
 		final File folder = dialog.getFolder(null);
 		if (folder != null) {
-			final Verzeichnis verzeichnis = new Verzeichnis();
+			final Verzeichnis verzeichnis = new VerzeichnisImpl();
 			verzeichnis.setName(folder.getName());
 			dao.create(verzeichnis);
 			//HINT: http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/

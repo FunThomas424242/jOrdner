@@ -2,7 +2,7 @@ package com.gh.jordner.integration.dao;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 
-import com.gh.jordner.integration.entity.Verzeichnis;
+import com.gh.jordner.api.Verzeichnis;
 
 @Creatable
 public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {

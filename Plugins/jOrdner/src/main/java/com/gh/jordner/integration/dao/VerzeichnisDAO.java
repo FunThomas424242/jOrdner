@@ -1,6 +1,8 @@
 package com.gh.jordner.integration.dao;
 
-import com.gh.jordner.integration.entity.Verzeichnis;
+import com.gh.jordner.api.Verzeichnis;
+
+
 
 public interface VerzeichnisDAO {
 

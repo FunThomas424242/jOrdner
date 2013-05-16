@@ -10,9 +10,6 @@
  *******************************************************************************/
 package com.gh.jordner.gui.parts;
 
-import java.text.DateFormat;
-import java.util.Date;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -21,13 +18,12 @@ import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.UIEventTopic;
-import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import com.gh.jordner.integration.entity.Verzeichnis;
+import com.gh.jordner.api.Verzeichnis;
 
 @Creatable
 public class VerzeichnisPart {
