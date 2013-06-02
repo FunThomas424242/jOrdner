@@ -9,5 +9,8 @@ Require-Bundle: org.eclipse.persistence.jpa;bundle-version="2.4.2",
  org.eclipse.gemini.jpa;bundle-version="1.1.0",
  org.eclipse.osgi;bundle-version="3.8.1",
  javax.persistence;bundle-version="2.0.5",
- jOrdner.api;bundle-version="1.0.0"
-Export-Package: com.gh.jordner.jpa
+ jOrdner.api;bundle-version="1.0.0",
+ org.eclipse.e4.core.di;bundle-version="1.1.0"
+Export-Package: com.gh.jordner.jpa;uses:="com.gh.jordner.api",
+ com.gh.jordner.jpa.osgi
+Meta-Persistence: META-INF/persistence.xml 

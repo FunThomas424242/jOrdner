@@ -59,7 +59,7 @@ public class VerzeichnisImpl implements Verzeichnis {
 	
 	
 	public String toString() {
-		return "DateiImpl(" + name + " " + parentPathURI +")";
+		return "VerzeichnisImpl(" + name + " " + parentPathURI +")";
 	}
 
 	

@@ -15,6 +15,7 @@ import java.io.File;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
@@ -22,8 +23,8 @@ import org.eclipse.swt.widgets.Shell;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
 import com.gh.jordner.api.Verzeichnis;
-import com.gh.jordner.integration.dao.VerzeichnisServiceDAOImpl;
 import com.gh.jordner.jpa.VerzeichnisImpl;
+import com.gh.jordner.jpa.VerzeichnisServiceDAOImpl;
 
 public class OpenHandler {
 

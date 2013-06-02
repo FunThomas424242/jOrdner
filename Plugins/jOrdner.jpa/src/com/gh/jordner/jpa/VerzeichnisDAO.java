@@ -1,4 +1,4 @@
-package com.gh.jordner.integration.dao;
+package com.gh.jordner.jpa;
 
 import com.gh.jordner.api.Verzeichnis;
 

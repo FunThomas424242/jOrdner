@@ -10,7 +10,7 @@
         <class>model.account.jpa.VerzeichnisImpl</class>
         <class>model.account.jpa.DateiImpl</class>
 
-        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
