@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: jOrdnerJPA
-Bundle-SymbolicName: jOrdner.jpa
+Bundle-SymbolicName: jOrdner.jpa;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -10,7 +10,13 @@ Require-Bundle: org.eclipse.persistence.jpa;bundle-version="2.4.2",
  org.eclipse.osgi;bundle-version="3.8.1",
  javax.persistence;bundle-version="2.0.5",
  jOrdner.api;bundle-version="1.0.0",
- org.eclipse.e4.core.di;bundle-version="1.1.0"
+ org.eclipse.e4.core.di;bundle-version="1.1.0",
+ org.eclipse.gemini.dbaccess.h2;bundle-version="1.1.0",
+ org.eclipse.gemini.dbaccess.derby;bundle-version="1.1.0",
+ org.eclipse.gemini.dbaccess.util;bundle-version="1.1.0",
+ org.eclipse.gemini.ext.di;bundle-version="1.0.2",
+ javax.inject;bundle-version="1.0.0"
 Export-Package: com.gh.jordner.jpa;uses:="com.gh.jordner.api",
  com.gh.jordner.jpa.osgi
 Meta-Persistence: META-INF/persistence.xml 
+Bundle-ActivationPolicy: lazy

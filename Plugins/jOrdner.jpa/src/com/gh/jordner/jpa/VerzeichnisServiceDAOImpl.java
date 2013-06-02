@@ -1,41 +1,42 @@
 package com.gh.jordner.jpa;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.framework.ServiceReference;
+import org.eclipse.gemini.ext.di.GeminiPersistenceContext;
 
 import com.gh.jordner.api.Verzeichnis;
 
 @Creatable
 public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 
-	public EntityManagerFactory lookupEMF(String unitName) {
-		BundleContext context = com.gh.jordner.jpa.osgi.Activator.getContext();
-		ServiceReference[] refs = null;
-		try {
-			refs = context.getServiceReferences(
-					EntityManagerFactory.class.getName(), "(osgi.unit.name="
-							+ unitName + ")");
-		} catch (InvalidSyntaxException isEx) {
-			throw new RuntimeException("Filter error", isEx);
-		}
-		return (refs == null) ? null : (EntityManagerFactory) context
-				.getService(refs[0]);
-	}
+	@Inject
+	@GeminiPersistenceContext(unitName = "Accounts")
+//	@Inject
+//	@GeminiPersistenceContext(unitName = "Accounts" , properties = {
+//	@GeminiPersistenceProperty(name=JDBC_DRIVER, value="com.mysql.jdbc.Driver"),
+//	@GeminiPersistenceProperty(name=JDBC_URL, value="jdbc:mysql://127.0.0.1/contacts"),
+//	@GeminiPersistenceProperty(name=JDBC_USER, value="contact"),
+//	@GeminiPersistenceProperty(name=JDBC_PASSWORD, value="contact"),
+//	@GeminiPersistenceProperty(name=DDL_GENERATION, value=DROP_AND_CREATE),
+//	@GeminiPersistenceProperty(name=DDL_GENERATION_MODE, value=DDL_DATABASE_GENERATION) })
+	private EntityManager em;
 
 	public Verzeichnis create(Verzeichnis verzeichnis) {
 		System.out.println(verzeichnis);
-		EntityManagerFactory emf = lookupEMF("Accounts");
-		if (emf != null) {
-			EntityManager em = emf.createEntityManager();
+		if (em != null) {
 			em.persist(verzeichnis);
-		}else{
-			System.out.println("No EntityManagerFactory found");
+		} else {
+			System.out.println("No EntityManager found");
 		}
+		// EntityManagerFactory emf = Activator.lookupEMF("Accounts");
+		// if (emf != null) {
+		// EntityManager em = emf.createEntityManager();
+		// em.persist(verzeichnis);
+		// } else {
+		// System.out.println("No EntityManagerFactory found");
+		// }
 		return verzeichnis;
 	}
 
