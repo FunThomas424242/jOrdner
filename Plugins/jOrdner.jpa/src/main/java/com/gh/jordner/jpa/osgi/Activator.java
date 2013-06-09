@@ -13,6 +13,8 @@ import org.osgi.service.jpa.EntityManagerFactoryBuilder;
 import org.osgi.util.tracker.ServiceTracker;
 import org.osgi.util.tracker.ServiceTrackerCustomizer;
 
+import com.gh.jordner.jpa.JPAConstants;
+
 public class Activator implements BundleActivator, ServiceTrackerCustomizer {
 
 	private static BundleContext context;
@@ -68,7 +70,7 @@ public class Activator implements BundleActivator, ServiceTrackerCustomizer {
 		Object service = b.getBundleContext().getService(reference);
 		String unitName = (String) reference
 				.getProperty(EntityManagerFactoryBuilder.JPA_UNIT_NAME);
-		if (unitName.equals("Accounts")) {
+		if (unitName.equals(JPAConstants.JPA_UNIT)) {
 			// TODO
 			// client.run((EntityManagerFactory) service);
 			System.out.println("save called");

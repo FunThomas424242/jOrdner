@@ -19,14 +19,27 @@
                      that results in an SQL exception. So use a db in the temp
                      area.
              -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:${java.io.tmpdir}/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4"/>
+            <!-- property name="javax.persistence.jdbc.url" value="jdbc:h2:${java.io.tmpdir}/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4"/-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:test"/>
+            
+            <property name="javax.persistence.jdbc.user" value="test" />
+			<property name="javax.persistence.jdbc.password" value="test" />
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:test"/>
            
             <!-- 
             <property name="javax.persistence.jdbc.user" value="app"/>
             <property name="javax.persistence.jdbc.password" value="app"/>
              -->
              
-            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="openjpa.ConnectionDriverName" value="org.h2.Driver" />
+			<property name="openjpa.ConnectionURL" value="jdbc:h2:test" />
+			<property name="openjpa.ConnectionUserName" value="sa" />
+			<property name="openjpa.ConnectionPassword" value="" />
+			
+			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" />
+             
+            <!-- property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.logging.timestamp" value="false"/>
             <property name="eclipselink.logging.thread" value="false"/>
             <property name="eclipselink.logging.exceptions" value="true"/>
@@ -34,7 +47,7 @@
             <property name="eclipselink.jdbc.read-connections.min" value="1"/>
             <property name="eclipselink.jdbc.write-connections.min" value="1"/>                        
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-            <property name="eclipselink.weaving" value="false"/>
+            <property name="eclipselink.weaving" value="false"/-->
         </properties>
     </persistence-unit>
 </persistence>

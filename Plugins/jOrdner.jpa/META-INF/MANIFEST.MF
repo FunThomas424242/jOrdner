@@ -19,4 +19,5 @@ Require-Bundle: org.eclipse.persistence.jpa;bundle-version="2.4.2",
 Export-Package: com.gh.jordner.jpa;uses:="com.gh.jordner.api",
  com.gh.jordner.jpa.osgi
 Meta-Persistence: META-INF/persistence.xml 
+JPA-PersistenceUnits: Accounts
 Bundle-ActivationPolicy: lazy
