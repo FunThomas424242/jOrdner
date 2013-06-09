@@ -19,6 +19,11 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 //	@GeminiPersistenceProperty(name=JDBC_URL, value="jdbc:mysql://127.0.0.1/contacts"),
 //	@GeminiPersistenceProperty(name=JDBC_USER, value="contact"),
 //	@GeminiPersistenceProperty(name=JDBC_PASSWORD, value="contact"),
+//	@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, valuePref = @Preference("jdbc_driver")),
+//    @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, valuePref = @Preference("jdbc_url")),
+//    @GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, value = "FINE"),
+//    @GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING, value = "false"),
+//    @GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING_INTERNAL, value = "false")
 //	@GeminiPersistenceProperty(name=DDL_GENERATION, value=DROP_AND_CREATE),
 //	@GeminiPersistenceProperty(name=DDL_GENERATION_MODE, value=DDL_DATABASE_GENERATION) })
 	private EntityManager em;
