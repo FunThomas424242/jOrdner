@@ -37,11 +37,11 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 	// value=DDL_DATABASE_GENERATION) })
 
 	@Inject
-	@GeminiPersistenceContext(unitName = "jFolder", properties = {
+	@GeminiPersistenceContext(unitName = JPAConstants.JPA_UNIT, properties = {
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, value = "sa"),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, value = ""),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, value = "org.h2.Driver"),
-			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, value = JPAConstants.H2_URL_EMBEDDED),
+			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, value = JPAConstants.H2_URL_EMBEDDED_HOME_DIR),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION, value = PersistenceUnitProperties.DROP_AND_CREATE),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION_MODE, value = PersistenceUnitProperties.DDL_DATABASE_GENERATION),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING, value = "false"),
@@ -64,7 +64,10 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 			}
 
 			if (entityManager != null) {
+				entityManager.getTransaction().begin();
 				entityManager.persist(verzeichnis);
+				entityManager.getTransaction().commit();
+				entityManager.clear();
 			} else {
 				System.out.println("No EntityManager from Activator found");
 			}
