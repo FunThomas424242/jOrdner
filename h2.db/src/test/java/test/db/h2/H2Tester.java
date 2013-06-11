@@ -9,11 +9,11 @@ import org.junit.Test;
 public class H2Tester {
 
 	@Test
-	public void testConnectionIsValid() throws SQLException, ClassNotFoundException {
+	public void testJdbcConnect() throws SQLException, ClassNotFoundException {
 
-		//Class.forName("org.h2.Driver");
+		Class.forName("org.h2.Driver");
 		final Connection connection = DriverManager
-				.getConnection("jdbc:h2:test");
+				.getConnection("jdbc:h2:~/test");
 
 		connection.createStatement();
 		// dataSource.setUsername("sa");
