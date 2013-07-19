@@ -8,23 +8,26 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package com.gh.jordner.gui.handlers;
+package jOrdnerApp.handlers;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.eclipse.e4.core.di.annotations.Creatable;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
 import com.gh.jordner.api.Verzeichnis;
 import com.gh.jordner.jpa.VerzeichnisImpl;
 import com.gh.jordner.jpa.VerzeichnisServiceDAOImpl;
+
 
 public class OpenHandler {
 
@@ -34,9 +37,12 @@ public class OpenHandler {
 	@Inject
 	VerzeichnisServiceDAOImpl dao;
 
+	
+	
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
-
+	public void execute(
+			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell){
+		
 		final FolderBrowser dialog = new FolderBrowser(shell);
 		final File folder = dialog.getFolder(null);
 		if (folder != null) {
@@ -48,5 +54,4 @@ public class OpenHandler {
 			//eventBroker.post("viewcommunication/asyncEvent", verzeichnis);
 		}
 	}
-
 }
