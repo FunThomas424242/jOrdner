@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package jOrdnerApp.parts;
+package com.gh.jordner.gui.parts;
 
 import javax.annotation.PostConstruct;
 import org.eclipse.e4.ui.di.Focus;

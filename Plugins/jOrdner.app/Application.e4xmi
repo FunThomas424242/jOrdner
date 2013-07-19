@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_iFi9U_C1EeKZWoEocgebgw">
         <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw">
           <children xsi:type="basic:PartStack" xmi:id="_iFi9VfC1EeKZWoEocgebgw">
-            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" contributionURI="bundleclass://jOrdnerApp/jOrdnerApp.parts.SamplePart" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.SamplePart" label="Sample Part"/>
           </children>
         </children>
       </children>
@@ -27,10 +27,10 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdnerApp/jOrdnerApp.handlers.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdnerApp/jOrdnerApp.handlers.OpenHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdnerApp/jOrdnerApp.handlers.SaveHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdnerApp/jOrdnerApp.handlers.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.OpenHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.SaveHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
   <bindingTables xmi:id="_iFi9QPC1EeKZWoEocgebgw" bindingContext="_iFiWOfC1EeKZWoEocgebgw">
     <bindings xmi:id="_iFi9QfC1EeKZWoEocgebgw" keySequence="M1+Q" command="_iFiWPPC1EeKZWoEocgebgw"/>
     <bindings xmi:id="_iFi9RPC1EeKZWoEocgebgw" keySequence="M1+O" command="_iFi9QvC1EeKZWoEocgebgw"/>
