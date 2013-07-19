@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.gemini.ext.di.GeminiPersistenceContext;
 import org.eclipse.gemini.ext.di.GeminiPersistenceProperty;
+import org.eclipse.gemini.ext.di.GeminiPersistenceUnit;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 import com.gh.jordner.api.Verzeichnis;
@@ -37,7 +38,7 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 	// value=DDL_DATABASE_GENERATION) })
 
 	@Inject
-	@GeminiPersistenceContext(unitName = JPAConstants.JPA_UNIT, properties = {
+	@GeminiPersistenceUnit(unitName = JPAConstants.JPA_UNIT, properties = {
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, value = "sa"),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, value = ""),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, value = "org.h2.Driver"),
