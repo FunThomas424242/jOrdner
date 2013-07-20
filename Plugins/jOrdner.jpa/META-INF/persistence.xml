@@ -15,7 +15,7 @@
 				
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:h2:${java.io.tmpdir}/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4" />
+				value="jdbc:h2:database/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4" />
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="eclipselink.logging.level" value="FINE" />
