@@ -12,6 +12,7 @@ package com.gh.jordner.handlers;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -48,7 +49,12 @@ public class OpenHandler {
 		if (folder != null) {
 			final Verzeichnis verzeichnis = new VerzeichnisImpl();
 			verzeichnis.setName(folder.getName());
-			dao.create(verzeichnis);
+			try {
+				dao.save(verzeichnis);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			//HINT: http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/
 			eventBroker.send("viewcommunication/syncEvent", verzeichnis);
 			//eventBroker.post("viewcommunication/asyncEvent", verzeichnis);
