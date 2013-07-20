@@ -20,7 +20,8 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 
 
 	@Inject
-	@GeminiPersistenceContext(unitName = "unconfigured", properties = {
+	@GeminiPersistenceContext(unitName = "unconfigured"
+	, properties = {
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, value = "sa"),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, value = ""),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, value = "org.h2.Driver"),

@@ -19,19 +19,6 @@
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="eclipselink.logging.level" value="FINE" />
-
-			<!-- <property name="openjpa.ConnectionDriverName" value="org.h2.Driver" 
-				/> <property name="openjpa.ConnectionURL" value="jdbc:h2:test" /> <property 
-				name="openjpa.ConnectionUserName" value="sa" /> <property name="openjpa.ConnectionPassword" 
-				value="" /> <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" 
-				/> < property name="eclipselink.logging.level" value="FINE"/> <property name="eclipselink.logging.timestamp" 
-				value="false"/> <property name="eclipselink.logging.thread" value="false"/> 
-				<property name="eclipselink.logging.exceptions" value="true"/> <property 
-				name="eclipselink.orm.throw.exceptions" value="true"/> <property name="eclipselink.jdbc.read-connections.min" 
-				value="1"/> <property name="eclipselink.jdbc.write-connections.min" value="1"/> 
-				<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> 
-				<property name="eclipselink.weaving" value="false"/> 
-				-->
 		</properties>
 	</persistence-unit>
 
