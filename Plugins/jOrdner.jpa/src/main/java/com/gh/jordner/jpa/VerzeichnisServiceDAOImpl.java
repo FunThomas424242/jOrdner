@@ -10,7 +10,6 @@ import javax.persistence.EntityTransaction;
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.gemini.ext.di.GeminiPersistenceContext;
 import org.eclipse.gemini.ext.di.GeminiPersistenceProperty;
-import org.eclipse.gemini.ext.di.GeminiPersistenceUnit;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 import com.gh.jordner.api.Verzeichnis;
@@ -21,7 +20,7 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 
 
 	@Inject
-	@GeminiPersistenceUnit(unitName = "unconfigured", properties = {
+	@GeminiPersistenceContext(unitName = "unconfigured", properties = {
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, value = "org.h2.Driver"),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, value = JPAConstants.H2_URL_EMBEDDED),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, value = "FINE"),
