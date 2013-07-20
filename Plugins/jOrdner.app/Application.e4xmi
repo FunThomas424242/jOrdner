@@ -3,9 +3,12 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_iFiWMfC1EeKZWoEocgebgw" label="jOrdnerApp" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_iFi9UvC1EeKZWoEocgebgw">
       <children xsi:type="advanced:Perspective" xmi:id="_iFi9U_C1EeKZWoEocgebgw">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_iFi9VfC1EeKZWoEocgebgw">
-            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.SamplePart" label="Sample Part"/>
+            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.VerzeichnisPart" label="Verwaltete Verzeichnisse"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_dmjHgPFnEeKrZ9elB2QiSw" elementId="jordner.app.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.DetailsPart" label="Details"/>
           </children>
         </children>
       </children>
