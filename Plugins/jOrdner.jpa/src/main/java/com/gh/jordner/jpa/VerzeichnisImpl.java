@@ -14,7 +14,7 @@ import javax.persistence.Id;
 import com.gh.jordner.api.Verzeichnis;
 
 
-@Entity(name="PUBLIC.VERZEICHNIS")
+@Entity(name="VERZEICHNIS")
 public class VerzeichnisImpl implements Verzeichnis {
 
 	@Id
