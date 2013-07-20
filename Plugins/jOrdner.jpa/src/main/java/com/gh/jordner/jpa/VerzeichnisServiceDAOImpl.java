@@ -11,7 +11,6 @@ import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 import com.gh.jordner.api.Verzeichnis;
 
-
 @Creatable
 public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 
@@ -42,12 +41,16 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, value = "sa"),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, value = ""),
 			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, value = "org.h2.Driver"),
-			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, value = JPAConstants.H2_URL_EMBEDDED_HOME_DIR),
-			//@GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION, value = PersistenceUnitProperties.DROP_AND_CREATE),
-			//@GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION_MODE, value = PersistenceUnitProperties.DDL_DATABASE_GENERATION),
-			//@GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING, value = "false"),
-			//@GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING_INTERNAL, value = "false"),
-			//@GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, value = "FINE")
+			@GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, value = JPAConstants.H2_URL_EMBEDDED),
+			 @GeminiPersistenceProperty(name =
+			 PersistenceUnitProperties.DDL_GENERATION, value =
+			 PersistenceUnitProperties.DROP_AND_CREATE),
+			 @GeminiPersistenceProperty(name =
+			 PersistenceUnitProperties.DDL_GENERATION_MODE, value =
+			 PersistenceUnitProperties.DDL_DATABASE_GENERATION),
+			@GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING, value = "false"),
+			@GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING_INTERNAL, value = "false"),
+			@GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, value = "FINE")
 
 	})
 	private EntityManager em;

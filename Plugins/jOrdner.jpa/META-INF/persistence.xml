@@ -10,7 +10,7 @@
         <class>com.gh.jordner.jpa.VerzeichnisImpl</class>
         <class>com.gh.jordner.jpa.DateiImpl</class>
 
-        <!--exclude-unlisted-classes>true</exclude-unlisted-classes-->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
             <!-- 
@@ -18,17 +18,13 @@
                      that results in an SQL exception. So use a db in the temp
                      area.
              -->
-            <!-- property name="javax.persistence.jdbc.url" value="jdbc:h2:${java.io.tmpdir}/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4"/-->
-       
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:h2:test"/>            
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:${java.io.tmpdir}/h2jpa;AUTO_SERVER=TRUE;ACCESS_MODE_DATA=rw;TRACE_LEVEL_FILE=4"/>            
             <property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
            
             <!-- 
-            <property name="javax.persistence.jdbc.user" value="app"/>
-            <property name="javax.persistence.jdbc.password" value="app"/>
-             
+            
              
             <property name="openjpa.ConnectionDriverName" value="org.h2.Driver" />
 			<property name="openjpa.ConnectionURL" value="jdbc:h2:test" />
@@ -37,6 +33,9 @@
 			
 			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" />
              -->
+             
+             <property name="eclipselink.logging.level" value="FINE"/>
+             
              
             <!-- property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.logging.timestamp" value="false"/>
