@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="org.e4.gemini.target" sequenceNumber="13">
+<?pde version="3.8"?><target name="org.e4.gemini.target" sequenceNumber="14">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="ch.qos.logback.feature.feature.group" version="1.0.7"/>
@@ -29,6 +29,10 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.gemini.ext.di.feature.feature.group" version="1.1.0.201307061743"/>
 <repository location="http://repository.mukis.de/p2/org.eclipse.gemini.ext.di/1.1.0"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="de.devboost.natspec.feature.group" version="2.1.0.v201306031020"/>
+<repository location="http://www.nat-spec.com/update"/>
 </location>
 </locations>
 </target>
