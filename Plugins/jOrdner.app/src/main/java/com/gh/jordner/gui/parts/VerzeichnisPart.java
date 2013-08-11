@@ -15,7 +15,6 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.di.annotations.Optional;
-import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.viewers.TableViewer;
@@ -28,8 +27,6 @@ import com.gh.jordner.api.Verzeichnis;
 @Creatable
 public class VerzeichnisPart {
 
-	@Inject
-	private IEventBroker eventBroker;
 
 	// private Label label;
 	private static TableViewer tableViewer;
@@ -54,7 +51,7 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/*") Verzeichnis verzeichnis) {
+			@UIEventTopic("viewcommunication/addFolder") Verzeichnis verzeichnis) {
 		final String folderName = verzeichnis.getName();
 		if (!folderName.isEmpty()) {
 			tableViewer.add(folderName);

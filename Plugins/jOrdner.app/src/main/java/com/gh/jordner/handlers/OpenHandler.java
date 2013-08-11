@@ -11,24 +11,18 @@
 package com.gh.jordner.handlers;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
 import com.gh.jordner.api.Verzeichnis;
-import com.gh.jordner.jpa.VerzeichnisImpl;
-import com.gh.jordner.jpa.VerzeichnisServiceDAOImpl;
-
+import com.gh.jordner.business.service.FileSystemService;
 
 public class OpenHandler {
 
@@ -36,28 +30,20 @@ public class OpenHandler {
 	private IEventBroker eventBroker;
 
 	@Inject
-	VerzeichnisServiceDAOImpl dao;
+	private FileSystemService fileService;
 
-	
-	
 	@Execute
-	public void execute(
-			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell){
-		
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+
 		final FolderBrowser dialog = new FolderBrowser(shell);
 		final File folder = dialog.getFolder(null);
 		if (folder != null) {
-			final Verzeichnis verzeichnis = new VerzeichnisImpl();
-			verzeichnis.setName(folder.getName());
-			try {
-				dao.save(verzeichnis);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			//HINT: http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/
-			eventBroker.send("viewcommunication/syncEvent", verzeichnis);
-			//eventBroker.post("viewcommunication/asyncEvent", verzeichnis);
+			final Verzeichnis verzeichnis = fileService
+					.addManagedFolder(folder);
+			// HINT:
+			// http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/
+			eventBroker.send("viewcommunication/addFolder", verzeichnis);
+			// eventBroker.post("viewcommunication/asyncEvent", verzeichnis);
 		}
 	}
 }
