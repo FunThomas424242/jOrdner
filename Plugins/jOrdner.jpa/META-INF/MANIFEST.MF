@@ -20,8 +20,7 @@ Require-Bundle: org.h2;bundle-version="1.1.117",
  org.eclipse.gemini.ext.di;bundle-version="1.0.2",
  javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.core.di.extensions;bundle-version="0.11.100"
-Export-Package: com.gh.jordner.jpa;uses:="com.gh.jordner.api",
- com.gh.jordner.jpa.osgi
+Export-Package: com.gh.jordner.jpa.filesystem;uses:="com.gh.jordner.api"
 Meta-Persistence: META-INF/persistence.xml 
 JPA-PersistenceUnits: Accounts
 Require-Capability: osgi.extender;

@@ -5,8 +5,8 @@
 
 	<persistence-unit name="production" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>com.gh.jordner.jpa.VerzeichnisImpl</class>
-		<class>com.gh.jordner.jpa.DateiImpl</class>
+		<class>com.gh.jordner.jpa.filesystem.VerzeichnisImpl</class>
+		<class>com.gh.jordner.jpa.filesystem.DateiImpl</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
@@ -23,8 +23,8 @@
 	
 	<persistence-unit name="development" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.gh.jordner.jpa.VerzeichnisImpl</class>
-        <class>com.gh.jordner.jpa.DateiImpl</class>
+        <class>com.gh.jordner.jpa.filesystem.VerzeichnisImpl</class>
+        <class>com.gh.jordner.jpa.filesystem.DateiImpl</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
@@ -46,8 +46,8 @@
 	<persistence-unit name="configured_via_annotations"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>com.gh.jordner.jpa.VerzeichnisImpl</class>
-		<class>com.gh.jordner.jpa.DateiImpl</class>
+		<class>com.gh.jordner.jpa.filesystem.VerzeichnisImpl</class>
+		<class>com.gh.jordner.jpa.filesystem.DateiImpl</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 	</persistence-unit>
 </persistence>

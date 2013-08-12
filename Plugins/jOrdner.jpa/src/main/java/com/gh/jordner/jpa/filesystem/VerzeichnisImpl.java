@@ -1,14 +1,21 @@
-package com.gh.jordner.jpa;
+/*******************************************************************************
+ * Copyright (c) 2012 PE INTERNATIONAL AG.
+ * All rights reserved.
+ * 
+ * Contributors:
+ *    Jan Stamer - initial API and implementation
+ *******************************************************************************/
+package com.gh.jordner.jpa.filesystem;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import com.gh.jordner.api.Datei;
+import com.gh.jordner.api.Verzeichnis;
 
 
-@Entity
-public class DateiImpl implements Datei {
+@Entity(name="VERZEICHNIS")
+public class VerzeichnisImpl implements Verzeichnis {
 
 	@Id
 	@GeneratedValue
@@ -18,9 +25,10 @@ public class DateiImpl implements Datei {
 
 	private String parentPathURI;
 	
-	public DateiImpl(){
+	public VerzeichnisImpl(){
 		super();
 	}
+	
 	
 	@Override
 	public Long getId() {
@@ -51,10 +59,8 @@ public class DateiImpl implements Datei {
 	
 	
 	public String toString() {
-		return "DateiImpl(" + name + " " + parentPathURI +")";
+		return "VerzeichnisImpl(" + name + " " + parentPathURI +")";
 	}
 
-	
-	
 	
 }

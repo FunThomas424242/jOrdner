@@ -1,4 +1,4 @@
-package com.gh.jordner.jpa;
+package com.gh.jordner.jpa.filesystem;
 
 import java.sql.SQLException;
 
