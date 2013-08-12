@@ -8,8 +8,8 @@ import javax.inject.Inject;
 import org.eclipse.e4.core.di.annotations.Creatable;
 
 import com.gh.jordner.api.Verzeichnis;
-import com.gh.jordner.jpa.VerzeichnisImpl;
-import com.gh.jordner.jpa.VerzeichnisServiceDAOImpl;
+import com.gh.jordner.jpa.filesystem.VerzeichnisImpl;
+import com.gh.jordner.jpa.filesystem.VerzeichnisServiceDAOImpl;
 
 @Creatable
 public class FileSystemService {
