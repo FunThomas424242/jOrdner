@@ -9,4 +9,5 @@ Require-Bundle: org.junit4,
  javax.inject;bundle-version="1.0.0",
  jOrdnerApp,
  jOrdner.api,
- org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0"
+ org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0",
+ jOrdner.jpa
