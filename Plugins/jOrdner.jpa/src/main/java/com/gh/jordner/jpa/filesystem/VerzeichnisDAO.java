@@ -1,14 +1,12 @@
 package com.gh.jordner.jpa.filesystem;
 
 import java.sql.SQLException;
-
-import com.gh.jordner.api.Verzeichnis;
-
-
+import java.util.List;
 
 public interface VerzeichnisDAO {
 
-	public void save(Verzeichnis verzeichnis) throws SQLException;
-	
-	
+	public void save(VerzeichnisImpl verzeichnis) throws SQLException;
+
+	public List<VerzeichnisImpl> allEntries();
+
 }
