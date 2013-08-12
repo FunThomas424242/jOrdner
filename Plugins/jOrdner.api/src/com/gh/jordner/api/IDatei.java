@@ -3,10 +3,10 @@ package com.gh.jordner.api;
 /**
  * 
  * @author SchubertT006
- * @deprecated Please use only VerzeichnisImpl of the jOrdner.jpa project
+ * @deprecated Please use only DateiImpl of the jOrdner.jpa project
  */
 @Deprecated
-public interface Verzeichnis {
+public interface IDatei {
 
 	public Long getId();
 

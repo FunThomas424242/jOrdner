@@ -46,7 +46,7 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 	private EntityManager em;
 
 	@Override
-	public void save(VerzeichnisImpl dataObj) throws SQLException {
+	public void save(Verzeichnis dataObj) throws SQLException {
 		checkConnection();
 		EntityTransaction trx = em.getTransaction();
 		trx.begin();
@@ -55,15 +55,15 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 	}
 
 	@Override
-	public List<VerzeichnisImpl> allEntries() {
+	public List<Verzeichnis> allEntries() {
 		// HINT:
 		// http://www.adam-bien.com/roller/abien/entry/selecting_all_jpa_entities_as
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<VerzeichnisImpl> cq = cb
-				.createQuery(VerzeichnisImpl.class);
-		Root<VerzeichnisImpl> rootEntry = cq.from(VerzeichnisImpl.class);
-		CriteriaQuery<VerzeichnisImpl> all = cq.select(rootEntry);
-		TypedQuery<VerzeichnisImpl> allQuery = em.createQuery(all);
+		CriteriaQuery<Verzeichnis> cq = cb
+				.createQuery(Verzeichnis.class);
+		Root<Verzeichnis> rootEntry = cq.from(Verzeichnis.class);
+		CriteriaQuery<Verzeichnis> all = cq.select(rootEntry);
+		TypedQuery<Verzeichnis> allQuery = em.createQuery(all);
 		return allQuery.getResultList();
 	}
 

@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface VerzeichnisDAO {
 
-	public void save(VerzeichnisImpl verzeichnis) throws SQLException;
+	public void save(Verzeichnis verzeichnis) throws SQLException;
 
-	public List<VerzeichnisImpl> allEntries();
+	public List<Verzeichnis> allEntries();
 
 }

@@ -47,7 +47,7 @@ public class TestSupport {
 	@TextSyntax("Importiere das Verzeichnis #1")
 	public void importiereDasVerzeichnisTmptest(final String folderPfad) {
 		final File folder = new File(folderPfad);
-		fileService.addManagedFolder(folder);
+		// TODO fileService.addManagedFolder(folder);
 	}
 
 	@TextSyntax("Es existiert ein Datenbankeintrag #1 mit Pfad #2")

@@ -2,7 +2,7 @@ package com.gh.jordner.gui.parts;
 
 import java.util.List;
 
-import com.gh.jordner.jpa.filesystem.VerzeichnisImpl;
+import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
 public class VerzeichnisPartModelProvider {
 
@@ -21,17 +21,17 @@ public class VerzeichnisPartModelProvider {
 	}
 
 	/* Instanz */
-	private List<VerzeichnisImpl> verzeichnisse;
+	private List<Verzeichnis> verzeichnisse;
 
-	public void setVerzeichnisse(List<VerzeichnisImpl> verzeichnisse) {
+	public void setVerzeichnisse(List<Verzeichnis> verzeichnisse) {
 		this.verzeichnisse = verzeichnisse;
 	}
 
-	public void addVerzeichnis(final VerzeichnisImpl verzeichnis) {
+	public void addVerzeichnis(final Verzeichnis verzeichnis) {
 		verzeichnisse.add(verzeichnis);
 	}
 
-	public List<VerzeichnisImpl> getVerzeichnisse() {
+	public List<Verzeichnis> getVerzeichnisse() {
 		return verzeichnisse;
 	}
 }

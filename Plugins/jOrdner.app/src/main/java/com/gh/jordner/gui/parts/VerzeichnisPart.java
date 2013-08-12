@@ -22,7 +22,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TableColumn;
 
 import com.gh.jordner.business.service.FileSystemService;
-import com.gh.jordner.jpa.filesystem.VerzeichnisImpl;
+import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
 @Creatable
 public class VerzeichnisPart {
@@ -63,7 +63,7 @@ public class VerzeichnisPart {
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
-				VerzeichnisImpl verzeichnis = (VerzeichnisImpl) element;
+				Verzeichnis verzeichnis = (Verzeichnis) element;
 				return verzeichnis.getName();
 			}
 		});
@@ -75,7 +75,7 @@ public class VerzeichnisPart {
 		col.setLabelProvider(new ColumnLabelProvider() {
 			@Override
 			public String getText(Object element) {
-				VerzeichnisImpl verzeichnis = (VerzeichnisImpl) element;
+				Verzeichnis verzeichnis = (Verzeichnis) element;
 				return verzeichnis.getParentPathURI();
 			}
 		});
@@ -111,7 +111,7 @@ public class VerzeichnisPart {
 
 		boolean isInvalidEntry = (folder == null || folder.getName().isEmpty());
 		if (!isInvalidEntry) {
-			final VerzeichnisImpl verzeichnis = new VerzeichnisImpl();
+			final Verzeichnis verzeichnis = new Verzeichnis();
 			verzeichnis.setName(folder.getName());
 			verzeichnis.setParentPathURI(folder.getParentFile()
 					.getAbsolutePath());
@@ -139,17 +139,16 @@ public class VerzeichnisPart {
 			final Object[] items = contentProvider.getElements(tableViewer
 					.getInput());
 			for (int i = 0; i < items.length; i++) {
-				final VerzeichnisImpl verzeichnis = (VerzeichnisImpl) items[i];
+				final Verzeichnis verzeichnis = (Verzeichnis) items[i];
 				if (verzeichnis.getId() == null) {
 					try {
-						fileService.speichernVerzeichnis(verzeichnis);
+						fileService.speichereVerzeichnis(verzeichnis);
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
+						// TODO print a message box
 						e.printStackTrace();
 					}
 				}
 			}
-			System.out.println("getElements()");
 			dirtyable.setDirty(false);
 		}
 
