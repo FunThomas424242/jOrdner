@@ -5,7 +5,12 @@
       <children xsi:type="advanced:Perspective" xmi:id="_iFi9U_C1EeKZWoEocgebgw">
         <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_iFi9VfC1EeKZWoEocgebgw">
-            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.VerzeichnisPart" label="Verwaltete Verzeichnisse"/>
+            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.VerzeichnisPart" label="Verwaltete Verzeichnisse">
+              <handlers xmi:id="_S45TMAUJEeOlU7k-e1eZ_g" elementId="jordner.app.handler.removeFolder" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.RemoveHandler" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
+              <menus xsi:type="menu:PopupMenu" xmi:id="_mC-U8ARlEeOL2Im0bYDF0A" elementId="jordner.app.popupmenu.folderlist" label="Table">
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_0r5GIARlEeOL2Im0bYDF0A" elementId="jordner.app.handledmenuitem.rmfolder" label="Remove Folder" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
+              </menus>
+            </children>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_dmjHgPFnEeKrZ9elB2QiSw" elementId="jordner.app.partstack.0">
             <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.DetailsPart" label="Details"/>
@@ -48,6 +53,7 @@
   <commands xmi:id="_iFi9QvC1EeKZWoEocgebgw" elementId="jOrdnerApp.open" commandName="openCommand"/>
   <commands xmi:id="_iFi9RfC1EeKZWoEocgebgw" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_iFi9SPC1EeKZWoEocgebgw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_p3oVQAUIEeOlU7k-e1eZ_g" elementId="jordner.app.command.delete" commandName="deleteCommand"/>
   <addons xmi:id="_iFiWMvC1EeKZWoEocgebgw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_iFiWM_C1EeKZWoEocgebgw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_iFiWNPC1EeKZWoEocgebgw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

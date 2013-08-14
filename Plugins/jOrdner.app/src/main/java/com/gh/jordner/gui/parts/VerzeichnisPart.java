@@ -1,6 +1,8 @@
 package com.gh.jordner.gui.parts;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -12,6 +14,7 @@ import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
@@ -19,9 +22,13 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableColumn;
 
+import com.gh.devtools.lib.swtextension.FolderBrowser;
 import com.gh.jordner.business.service.FileSystemService;
+import com.gh.jordner.exceptions.DataAccessException;
+import com.gh.jordner.handlers.CommEventTyp;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
 @Creatable
@@ -35,17 +42,26 @@ public class VerzeichnisPart {
 	private TableViewer tableViewer;
 
 	@PostConstruct
-	public void createComposite(Composite parent) {
+	public void createComposite(Composite parent, EMenuService service) {
 		modelProvider = VerzeichnisPartModelProvider.getInstance();
-		modelProvider.setVerzeichnisse(fileService.lesenAllerVerzeichnisse());
+		List<Verzeichnis> managedFolders = new ArrayList<Verzeichnis>();
+		try {
+			managedFolders = fileService.readAllManagedFolders();
+		} catch (DataAccessException e) {
+			// TODO print a message box
+			e.printStackTrace();
+		}
+		modelProvider.setVerzeichnisse(managedFolders);
 		tableViewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 		erzeugeSpalten(parent, tableViewer);
 		tableViewer.setContentProvider(new ArrayContentProvider());
-		tableViewer.setInput(modelProvider.getVerzeichnisse());
+		tableViewer.setInput(modelProvider.getInput());
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
 		tableViewer.getTable().setHeaderVisible(true);
 		tableViewer.getTable().setLinesVisible(true);
+		service.registerContextMenu(tableViewer.getTable(),
+				"jordner.app.popupmenu.folderlist");
 
 	}
 
@@ -95,6 +111,23 @@ public class VerzeichnisPart {
 		return spaltenDefinition;
 	}
 
+	@Inject
+	@Optional
+	void eventReceived(
+			@UIEventTopic("viewcommunication/removeFolder") CommEventTyp.RemoveManagedFolders event,
+			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
+
+		System.out.println("viewcommunication/removeFolder ausgeführt");
+
+		int[] indizesToRemove = tableViewer.getTable().getSelectionIndices();
+
+		modelProvider.markToRemove(indizesToRemove);
+		modelProvider.deleteRemovedItemsFromDisplay();
+		tableViewer.setInput(modelProvider.getInput());
+		dirtyable.setDirty(true);
+
+	}
+
 	/**
 	 * http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-
 	 * communicate-the-e4-way/
@@ -104,10 +137,14 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/addFolder") File folder,
+			@UIEventTopic("viewcommunication/addFolder") CommEventTyp.AddManagedFolder event,
+			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/addFolder ausgeführt");
+
+		final FolderBrowser dialog = new FolderBrowser(shell);
+		final File folder = dialog.getFolder(null);
 
 		boolean isInvalidEntry = (folder == null || folder.getName().isEmpty());
 		if (!isInvalidEntry) {
@@ -117,7 +154,7 @@ public class VerzeichnisPart {
 					.getAbsolutePath());
 
 			modelProvider.addVerzeichnis(verzeichnis);
-			tableViewer.setInput(modelProvider.getVerzeichnisse());
+			tableViewer.setInput(modelProvider.getInput());
 			dirtyable.setDirty(true);
 
 		}
@@ -127,28 +164,32 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/saveFolders") Boolean isDirty,
+			@UIEventTopic("viewcommunication/saveFolders") CommEventTyp.SaveAll event,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/saveFolders ausgeführt");
 
 		boolean doSave = (dirtyable != null && dirtyable.isDirty());
 		if (doSave) {
-			final ArrayContentProvider contentProvider = (ArrayContentProvider) tableViewer
-					.getContentProvider();
-			final Object[] items = contentProvider.getElements(tableViewer
-					.getInput());
-			for (int i = 0; i < items.length; i++) {
-				final Verzeichnis verzeichnis = (Verzeichnis) items[i];
-				if (verzeichnis.getId() == null) {
-					try {
-						fileService.speichereVerzeichnis(verzeichnis);
-					} catch (Exception e) {
-						// TODO print a message box
-						e.printStackTrace();
-					}
-				}
-			}
+
+			modelProvider.saveAll(fileService);
+
+			// final ArrayContentProvider contentProvider =
+			// (ArrayContentProvider) tableViewer
+			// .getContentProvider();
+			// final Object[] items = contentProvider.getElements(tableViewer
+			// .getInput());
+			// for (int i = 0; i < items.length; i++) {
+			// final Verzeichnis verzeichnis = (Verzeichnis) items[i];
+			// if (verzeichnis.getId() == null) {
+			// try {
+			// fileService.addManagedFolder(verzeichnis);
+			// } catch (Exception e) {
+			// // TODO print a message box
+			// e.printStackTrace();
+			// }
+			// }
+			// }
 			dirtyable.setDirty(false);
 		}
 

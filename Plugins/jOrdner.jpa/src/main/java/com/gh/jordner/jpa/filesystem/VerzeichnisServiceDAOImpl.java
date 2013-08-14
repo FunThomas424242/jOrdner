@@ -16,7 +16,7 @@ import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.gemini.ext.di.GeminiPersistenceContext;
 
 @Creatable
-public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
+public class VerzeichnisServiceDAOImpl {
 
 	@Inject
 	@GeminiPersistenceContext(unitName = JPAConstants.JPA_UNIT
@@ -45,7 +45,6 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 	)
 	private EntityManager em;
 
-	@Override
 	public void save(Verzeichnis dataObj) throws SQLException {
 		checkConnection();
 		EntityTransaction trx = em.getTransaction();
@@ -54,17 +53,23 @@ public class VerzeichnisServiceDAOImpl implements VerzeichnisDAO {
 		trx.commit();
 	}
 
-	@Override
 	public List<Verzeichnis> allEntries() {
 		// HINT:
 		// http://www.adam-bien.com/roller/abien/entry/selecting_all_jpa_entities_as
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Verzeichnis> cq = cb
-				.createQuery(Verzeichnis.class);
+		CriteriaQuery<Verzeichnis> cq = cb.createQuery(Verzeichnis.class);
 		Root<Verzeichnis> rootEntry = cq.from(Verzeichnis.class);
 		CriteriaQuery<Verzeichnis> all = cq.select(rootEntry);
 		TypedQuery<Verzeichnis> allQuery = em.createQuery(all);
 		return allQuery.getResultList();
+	}
+
+	public void remove(final Verzeichnis verzeichnis) throws SQLException {
+		checkConnection();
+		EntityTransaction trx = em.getTransaction();
+		trx.begin();
+		em.remove(verzeichnis);
+		trx.commit();
 	}
 
 	@PreDestroy

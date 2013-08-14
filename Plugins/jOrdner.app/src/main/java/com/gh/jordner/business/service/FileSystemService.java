@@ -17,19 +17,31 @@ public class FileSystemService {
 	@Inject
 	VerzeichnisServiceDAOImpl dao;
 
-	public List<Verzeichnis> lesenAllerVerzeichnisse() {
+	public List<Verzeichnis> readAllManagedFolders() throws DataAccessException {
 		List<Verzeichnis> verzeichnisse = dao.allEntries();
 		if (verzeichnisse == null) {
-			System.out.println("DAO lieferte null zurück und keine Liste");
+			throw new DataAccessException(
+					"DAO lieferte null zurück und keine Liste");
 		}
 		return verzeichnisse;
 	}
 
-	public void speichereVerzeichnis(Verzeichnis verzeichnis)
+	public void addManagedFolder(Verzeichnis verzeichnis)
 			throws DataAccessException {
 
 		try {
 			dao.save(verzeichnis);
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		}
+
+	}
+
+	public void removeManagedFolder(Verzeichnis verzeichnis)
+			throws DataAccessException {
+
+		try {
+			dao.remove(verzeichnis);
 		} catch (SQLException e) {
 			throw new DataAccessException(e);
 		}
