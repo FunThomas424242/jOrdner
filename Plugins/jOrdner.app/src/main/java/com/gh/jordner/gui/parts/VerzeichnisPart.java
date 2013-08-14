@@ -122,7 +122,7 @@ public class VerzeichnisPart {
 		int[] indizesToRemove = tableViewer.getTable().getSelectionIndices();
 
 		modelProvider.markToRemove(indizesToRemove);
-		modelProvider.deleteRemovedItemsFromDisplay();
+		modelProvider.deleteRemovedItemsFromInput();
 		tableViewer.setInput(modelProvider.getInput());
 		dirtyable.setDirty(true);
 
@@ -171,25 +171,7 @@ public class VerzeichnisPart {
 
 		boolean doSave = (dirtyable != null && dirtyable.isDirty());
 		if (doSave) {
-
 			modelProvider.saveAll(fileService);
-
-			// final ArrayContentProvider contentProvider =
-			// (ArrayContentProvider) tableViewer
-			// .getContentProvider();
-			// final Object[] items = contentProvider.getElements(tableViewer
-			// .getInput());
-			// for (int i = 0; i < items.length; i++) {
-			// final Verzeichnis verzeichnis = (Verzeichnis) items[i];
-			// if (verzeichnis.getId() == null) {
-			// try {
-			// fileService.addManagedFolder(verzeichnis);
-			// } catch (Exception e) {
-			// // TODO print a message box
-			// e.printStackTrace();
-			// }
-			// }
-			// }
 			dirtyable.setDirty(false);
 		}
 

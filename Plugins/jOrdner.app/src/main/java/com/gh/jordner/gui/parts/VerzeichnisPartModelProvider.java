@@ -33,8 +33,13 @@ public class VerzeichnisPartModelProvider {
 	}
 
 	public void addVerzeichnis(final Verzeichnis verzeichnis) {
-		zuErstellendeVerzeichnisse.add(verzeichnis);
-		verzeichnisse.add(verzeichnis);
+		boolean isContained = verzeichnisse.contains(verzeichnis)
+				|| zuErstellendeVerzeichnisse.contains(verzeichnis);
+		if (!isContained) {
+			zuErstellendeVerzeichnisse.add(verzeichnis);
+			verzeichnisse.add(verzeichnis);
+		}
+
 	}
 
 	public List<Verzeichnis> getInput() {
@@ -44,11 +49,13 @@ public class VerzeichnisPartModelProvider {
 	public void markToRemove(int[] indizesToRemove) {
 		for (final Integer listIndex : indizesToRemove) {
 			final Verzeichnis verzeichnis = verzeichnisse.get(listIndex);
-			zuLoeschendeVerzeichnisse.add(verzeichnis);
+			if (!zuLoeschendeVerzeichnisse.contains(verzeichnis)) {
+				zuLoeschendeVerzeichnisse.add(verzeichnis);
+			}
 		}
 	}
 
-	public void deleteRemovedItemsFromDisplay() {
+	public void deleteRemovedItemsFromInput() {
 		for (final Verzeichnis verzeichnis : zuLoeschendeVerzeichnisse) {
 			verzeichnisse.remove(verzeichnis);
 		}
