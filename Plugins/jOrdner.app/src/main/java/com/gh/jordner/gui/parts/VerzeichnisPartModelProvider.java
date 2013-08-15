@@ -3,25 +3,22 @@ package com.gh.jordner.gui.parts;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+import org.eclipse.e4.core.di.annotations.Creatable;
+import org.eclipse.swt.widgets.Shell;
+
 import com.gh.jordner.business.service.FileSystemService;
 import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
+@Creatable
+@Singleton
 public class VerzeichnisPartModelProvider {
 
-	private static VerzeichnisPartModelProvider instance;
-
-	// Erzeugung nur in der Klasse selbst möglich
-	private VerzeichnisPartModelProvider() {
-	}
-
-	// Liefert die Instanz zurück (und erzeugt sie)
-	public synchronized static VerzeichnisPartModelProvider getInstance() {
-		if (instance == null) {
-			instance = new VerzeichnisPartModelProvider();
-		}
-		return instance;
-	}
+	@Inject
+	private FileSystemService fileService;
 
 	/* Instanz */
 	private List<Verzeichnis> verzeichnisse;
@@ -61,7 +58,7 @@ public class VerzeichnisPartModelProvider {
 		}
 	}
 
-	public void saveAll(final FileSystemService fileService) {
+	public void saveAll(final Shell shell) {
 
 		// Alle neuen Einträge hinzufügen
 		for (final Verzeichnis verzeichnis : zuErstellendeVerzeichnisse) {
@@ -84,11 +81,11 @@ public class VerzeichnisPartModelProvider {
 			}
 		}
 		zuLoeschendeVerzeichnisse.clear();
-		reloadInput(fileService);
+		reloadInput();
 
 	}
 
-	public void reloadInput(final FileSystemService fileService) {
+	public void reloadInput() {
 		try {
 			verzeichnisse = fileService.readAllManagedFolders();
 		} catch (DataAccessException e) {

@@ -1,8 +1,6 @@
 package com.gh.jordner.gui.parts;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -26,8 +24,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableColumn;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
-import com.gh.jordner.business.service.FileSystemService;
-import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.handlers.CommEventTyp;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
@@ -35,27 +31,16 @@ import com.gh.jordner.jpa.filesystem.Verzeichnis;
 public class VerzeichnisPart {
 
 	@Inject
-	FileSystemService fileService;
-
-	VerzeichnisPartModelProvider modelProvider;
-
+	private VerzeichnisPartModelProvider modelProvider;
 	private TableViewer tableViewer;
 
 	@PostConstruct
 	public void createComposite(Composite parent, EMenuService service) {
-		modelProvider = VerzeichnisPartModelProvider.getInstance();
-		List<Verzeichnis> managedFolders = new ArrayList<Verzeichnis>();
-		try {
-			managedFolders = fileService.readAllManagedFolders();
-		} catch (DataAccessException e) {
-			// TODO print a message box
-			e.printStackTrace();
-		}
-		modelProvider.setVerzeichnisse(managedFolders);
 		tableViewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 		erzeugeSpalten(parent, tableViewer);
 		tableViewer.setContentProvider(new ArrayContentProvider());
+		modelProvider.reloadInput();
 		tableViewer.setInput(modelProvider.getInput());
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
 		tableViewer.getTable().setHeaderVisible(true);
@@ -165,13 +150,14 @@ public class VerzeichnisPart {
 	@Optional
 	void eventReceived(
 			@UIEventTopic("viewcommunication/saveFolders") CommEventTyp.SaveAll event,
+			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/saveFolders ausgeführt");
 
 		boolean doSave = (dirtyable != null && dirtyable.isDirty());
 		if (doSave) {
-			modelProvider.saveAll(fileService);
+			modelProvider.saveAll(shell);
 			dirtyable.setDirty(false);
 		}
 
