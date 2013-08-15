@@ -150,14 +150,13 @@ public class VerzeichnisPart {
 	@Optional
 	void eventReceived(
 			@UIEventTopic("viewcommunication/saveFolders") CommEventTyp.SaveAll event,
-			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/saveFolders ausgeführt");
 
 		boolean doSave = (dirtyable != null && dirtyable.isDirty());
 		if (doSave) {
-			modelProvider.saveAll(shell);
+			modelProvider.saveAll();
 			dirtyable.setDirty(false);
 		}
 

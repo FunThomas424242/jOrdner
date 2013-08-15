@@ -6,9 +6,12 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.e4.core.di.annotations.Creatable;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.e4.core.services.log.Logger;
+import org.osgi.framework.Bundle;
 
+import com.gh.devtools.lib.swtextension.ErrorMessageDialog;
 import com.gh.jordner.business.service.FileSystemService;
 import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
@@ -16,6 +19,9 @@ import com.gh.jordner.jpa.filesystem.Verzeichnis;
 @Creatable
 @Singleton
 public class VerzeichnisPartModelProvider {
+
+	@Inject
+	private Logger logger;
 
 	@Inject
 	private FileSystemService fileService;
@@ -58,15 +64,19 @@ public class VerzeichnisPartModelProvider {
 		}
 	}
 
-	public void saveAll(final Shell shell) {
+	public void saveAll() {
 
 		// Alle neuen Einträge hinzufügen
 		for (final Verzeichnis verzeichnis : zuErstellendeVerzeichnisse) {
 			try {
 				fileService.addManagedFolder(verzeichnis);
-			} catch (DataAccessException e) {
-				// TODO print a message box
-				e.printStackTrace();
+			} catch (DataAccessException ex) {
+
+				final Bundle bundle = Platform.getBundle("jOrdnerApp");
+				final ErrorMessageDialog errorDialog = new ErrorMessageDialog(
+						logger, bundle, "Datenzugriffsfehler", this.getClass(),
+						ex);
+
 			}
 		}
 		zuErstellendeVerzeichnisse.clear();
