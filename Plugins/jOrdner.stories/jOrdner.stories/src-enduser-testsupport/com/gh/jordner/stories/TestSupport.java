@@ -7,7 +7,7 @@ import javax.inject.Inject;
 
 import org.junit.Assert;
 
-import com.gh.jordner.business.service.FileSystemService;
+import com.gh.jordner.filsesystem.FileSystemService;
 
 import de.devboost.natspec.annotations.TextSyntax;
 

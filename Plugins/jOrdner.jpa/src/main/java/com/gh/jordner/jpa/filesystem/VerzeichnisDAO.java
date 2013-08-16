@@ -16,7 +16,7 @@ import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.gemini.ext.di.GeminiPersistenceContext;
 
 @Creatable
-public class VerzeichnisServiceDAOImpl {
+public class VerzeichnisDAO {
 
 	@Inject
 	@GeminiPersistenceContext(unitName = JPAConstants.JPA_UNIT
@@ -45,7 +45,7 @@ public class VerzeichnisServiceDAOImpl {
 	)
 	private EntityManager em;
 
-	public void save(Verzeichnis dataObj) throws SQLException {
+	public void insert(Verzeichnis dataObj) throws SQLException {
 		checkConnection();
 		EntityTransaction trx = em.getTransaction();
 		trx.begin();
@@ -53,7 +53,7 @@ public class VerzeichnisServiceDAOImpl {
 		trx.commit();
 	}
 
-	public List<Verzeichnis> allEntries() {
+	public List<Verzeichnis> listAllVerzeichnisse() {
 		// HINT:
 		// http://www.adam-bien.com/roller/abien/entry/selecting_all_jpa_entities_as
 		CriteriaBuilder cb = em.getCriteriaBuilder();

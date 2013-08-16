@@ -5,15 +5,15 @@
       <children xsi:type="advanced:Perspective" xmi:id="_iFi9U_C1EeKZWoEocgebgw">
         <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_iFi9VfC1EeKZWoEocgebgw">
-            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.VerzeichnisPart" label="Verwaltete Verzeichnisse">
-              <handlers xmi:id="_S45TMAUJEeOlU7k-e1eZ_g" elementId="jordner.app.handler.removeFolder" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.RemoveHandler" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
+            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.VerzeichnisPart" label="Verwaltete Verzeichnisse">
+              <handlers xmi:id="_S45TMAUJEeOlU7k-e1eZ_g" elementId="jordner.app.handler.removeFolder" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.RemoveVerzeichnisHandler" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
               <menus xsi:type="menu:PopupMenu" xmi:id="_mC-U8ARlEeOL2Im0bYDF0A" elementId="jordner.app.popupmenu.folderlist" label="Table">
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_0r5GIARlEeOL2Im0bYDF0A" elementId="jordner.app.handledmenuitem.rmfolder" label="Remove Folder" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
               </menus>
             </children>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_dmjHgPFnEeKrZ9elB2QiSw" elementId="jordner.app.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.parts.DetailsPart" label="Details"/>
+            <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.detaillist.DetailsPart" label="Details"/>
           </children>
         </children>
       </children>
@@ -35,10 +35,10 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.OpenHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.SaveHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.handlers.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.actions.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.AddVerzeichnisHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.SaveVerzeichnisListHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.actions.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
   <bindingTables xmi:id="_iFi9QPC1EeKZWoEocgebgw" bindingContext="_iFiWOfC1EeKZWoEocgebgw">
     <bindings xmi:id="_iFi9QfC1EeKZWoEocgebgw" keySequence="M1+Q" command="_iFiWPPC1EeKZWoEocgebgw"/>
     <bindings xmi:id="_iFi9RPC1EeKZWoEocgebgw" keySequence="M1+O" command="_iFi9QvC1EeKZWoEocgebgw"/>

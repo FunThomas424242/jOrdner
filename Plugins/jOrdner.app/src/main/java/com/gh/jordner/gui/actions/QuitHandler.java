@@ -1,4 +1,4 @@
-package com.gh.jordner.handlers;
+package com.gh.jordner.gui.actions;
 
 import javax.inject.Named;
 

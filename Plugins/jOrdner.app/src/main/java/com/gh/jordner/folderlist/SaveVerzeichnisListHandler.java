@@ -1,4 +1,4 @@
-package com.gh.jordner.handlers;
+package com.gh.jordner.folderlist;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -12,7 +12,7 @@ import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.services.IServiceConstants;
 
-public class SaveHandler {
+public class SaveVerzeichnisListHandler {
 
 	@Inject
 	private IEventBroker eventBroker;
@@ -33,7 +33,8 @@ public class SaveHandler {
 
 		// HINT:
 		// http://tomsondev.bestsolution.at/2011/02/07/enhanced-rcp-how-views-can-communicate-the-e4-way/
-		eventBroker.send("viewcommunication/saveFolders", CommEventTyp.SAVE_ALL);
+		eventBroker.send(VerzeichnisCommEvents.VIEWCOMMUNICATION_SAVE_FOLDERS,
+				VerzeichnisCommEvents.SAVE_ALL);
 
 	}
 }

@@ -1,4 +1,4 @@
-package com.gh.jordner.gui.parts;
+package com.gh.jordner.folderlist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,19 +12,19 @@ import org.eclipse.e4.core.services.log.Logger;
 import org.osgi.framework.Bundle;
 
 import com.gh.devtools.lib.swtextension.ErrorMessageDialog;
-import com.gh.jordner.business.service.FileSystemService;
 import com.gh.jordner.exceptions.DataAccessException;
+import com.gh.jordner.filsesystem.FileSystemService;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
 @Creatable
 @Singleton
-public class VerzeichnisPartModelProvider {
+public class VerzeichnisPartModel {
 
 	@Inject
 	private Logger logger;
 
 	@Inject
-	private FileSystemService fileService;
+	private FileSystemService fileSystemService;
 
 	/* Instanz */
 	private List<Verzeichnis> verzeichnisse;
@@ -69,10 +69,11 @@ public class VerzeichnisPartModelProvider {
 		// Alle neuen Einträge hinzufügen
 		for (final Verzeichnis verzeichnis : zuErstellendeVerzeichnisse) {
 			try {
-				fileService.addManagedFolder(verzeichnis);
+				fileSystemService.addManagedFolder(verzeichnis);
 			} catch (DataAccessException ex) {
 
 				final Bundle bundle = Platform.getBundle("jOrdnerApp");
+				@SuppressWarnings("unused")
 				final ErrorMessageDialog errorDialog = new ErrorMessageDialog(
 						logger, bundle, "Datenzugriffsfehler", this.getClass(),
 						ex);
@@ -84,7 +85,7 @@ public class VerzeichnisPartModelProvider {
 		// Alle zu löschenden Einträge entfernen
 		for (final Verzeichnis verzeichnis : zuLoeschendeVerzeichnisse) {
 			try {
-				fileService.removeManagedFolder(verzeichnis);
+				fileSystemService.removeManagedFolder(verzeichnis);
 			} catch (DataAccessException e) {
 				// TODO print a message box
 				e.printStackTrace();
@@ -97,7 +98,7 @@ public class VerzeichnisPartModelProvider {
 
 	public void reloadInput() {
 		try {
-			verzeichnisse = fileService.readAllManagedFolders();
+			verzeichnisse = fileSystemService.readAllManagedFolders();
 		} catch (DataAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

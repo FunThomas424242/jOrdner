@@ -1,4 +1,4 @@
-package com.gh.jordner.business.service;
+package com.gh.jordner.filsesystem;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,16 +9,16 @@ import org.eclipse.e4.core.di.annotations.Creatable;
 
 import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
-import com.gh.jordner.jpa.filesystem.VerzeichnisServiceDAOImpl;
+import com.gh.jordner.jpa.filesystem.VerzeichnisDAO;
 
 @Creatable
 public class FileSystemService {
 
 	@Inject
-	VerzeichnisServiceDAOImpl dao;
+	VerzeichnisDAO dao;
 
 	public List<Verzeichnis> readAllManagedFolders() throws DataAccessException {
-		List<Verzeichnis> verzeichnisse = dao.allEntries();
+		List<Verzeichnis> verzeichnisse = dao.listAllVerzeichnisse();
 		if (verzeichnisse == null) {
 			throw new DataAccessException(
 					"DAO lieferte null zurück und keine Liste");
@@ -30,7 +30,7 @@ public class FileSystemService {
 			throws DataAccessException {
 
 		try {
-			dao.save(verzeichnis);
+			dao.insert(verzeichnis);
 		} catch (SQLException e) {
 			throw new DataAccessException(e);
 		}

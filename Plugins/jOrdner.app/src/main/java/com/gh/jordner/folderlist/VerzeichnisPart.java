@@ -1,4 +1,4 @@
-package com.gh.jordner.gui.parts;
+package com.gh.jordner.folderlist;
 
 import java.io.File;
 
@@ -24,14 +24,14 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableColumn;
 
 import com.gh.devtools.lib.swtextension.FolderBrowser;
-import com.gh.jordner.handlers.CommEventTyp;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
 @Creatable
 public class VerzeichnisPart {
 
 	@Inject
-	private VerzeichnisPartModelProvider modelProvider;
+	private VerzeichnisPartModel modelProvider;
+
 	private TableViewer tableViewer;
 
 	@PostConstruct
@@ -99,7 +99,7 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/removeFolder") CommEventTyp.RemoveManagedFolders event,
+			@UIEventTopic(VerzeichnisCommEvents.VIEWCOMMUNICATION_REMOVE_FOLDER) VerzeichnisCommEvents.RemoveManagedFolders event,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/removeFolder ausgeführt");
@@ -122,7 +122,7 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/addFolder") CommEventTyp.AddManagedFolder event,
+			@UIEventTopic(VerzeichnisCommEvents.VIEWCOMMUNICATION_ADD_FOLDER) VerzeichnisCommEvents.AddManagedFolder event,
 			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
@@ -149,7 +149,7 @@ public class VerzeichnisPart {
 	@Inject
 	@Optional
 	void eventReceived(
-			@UIEventTopic("viewcommunication/saveFolders") CommEventTyp.SaveAll event,
+			@UIEventTopic(VerzeichnisCommEvents.VIEWCOMMUNICATION_SAVE_FOLDERS) VerzeichnisCommEvents.SaveAll event,
 			@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
 		System.out.println("viewcommunication/saveFolders ausgeführt");
