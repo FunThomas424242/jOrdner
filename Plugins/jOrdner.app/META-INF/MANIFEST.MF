@@ -21,4 +21,5 @@ Require-Bundle: jOrdner.api,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: javax.annotation;version="1.0.0",
  javax.inject
-Export-Package: com.gh.jordner.filsesystem
+Export-Package: com.gh.jordner.exceptions,
+ com.gh.jordner.filsesystem

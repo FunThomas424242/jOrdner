@@ -5,6 +5,8 @@ Bundle-SymbolicName: jOrdner.api
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Import-Package: org.osgi.framework;version="1.7.0"
-Export-Package: com.gh.jordner.api,
- com.gh.jordner.exceptions
+Import-Package: org.eclipse.core.runtime;version="3.4.0",
+ org.eclipse.e4.core.services.log,
+ org.osgi.framework;version="1.7.0"
+Export-Package: com.gh.devtools.lib.swtextension
+Require-Bundle: org.eclipse.jface
