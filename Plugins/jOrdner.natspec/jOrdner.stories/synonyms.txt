@@ -1,0 +1,2 @@
+equals, is
+result, sum

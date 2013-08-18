@@ -1,0 +1,20 @@
+# language: de
+Funktionalität: Verwaltete Verzeichnisse bearbeiten
+  Um Ordnung im Filesystem zu halten wird eine Liste der zu verwaltenden Verzeichnisse gepflegt.
+
+  Grundlage: Anwendung starten
+    Angenommen ich starte die jOrdner Anwendung.
+    Wenn ich in die Verzeichnisverwaltung klicke:
+    
+    
+  Szenario: Verzeichnis zur Liste hinzufügen
+  	Und im Menü "Hinzufügen" wähle.
+  	Und im ÖffnenDialog einen Ordner im lokalen Filesystem auswähle.
+  	Und auf Übernehmen klicke.
+  	Dann erscheint der Ordner am Ende der Liste der verwalteten Verzeichnisse.
+  
+  Szenario: Verzeichnis aus Liste entfernen.
+    Und einen Listeneintrag per Klick auswähle.
+    Und im Kontextmenü "Entfernen" auswähle.
+  	Dann wird der ausgewählte Ordner aus der Liste entfernt.
+  	

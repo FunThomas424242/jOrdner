@@ -1,0 +1,13 @@
+Erstelle ein Verzeichnis /tmp/test/folder1
+Es existiert /tmp/test/folder1 vom Typ Verzeichnis
+Erstelle ein Verzeichnis /tmp/test/folder2
+Es existiert /tmp/test/folder2 vom Typ Verzeichnis 
+Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder1 
+Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder2
+Importiere das Verzeichnis /tmp/test
+Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder1
+Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder2
+Lösche Verzeichnis /tmp/test/folder1
+Lösche Verzeichnis /tmp/test/folder2
+
+ 
