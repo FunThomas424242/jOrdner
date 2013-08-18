@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="org.e4.gemini.target" sequenceNumber="14">
+<?pde version="3.8"?><target name="jOrdner.all.target" sequenceNumber="16">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="ch.qos.logback.feature.feature.group" version="1.0.7"/>
@@ -33,6 +33,15 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="de.devboost.natspec.feature.group" version="2.1.0.v201306031020"/>
 <repository location="http://www.nat-spec.com/update"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.swtbot.forms.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<unit id="org.eclipse.swtbot.eclipse.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<unit id="org.eclipse.swtbot.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<unit id="org.eclipse.swtbot.ide.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<unit id="org.eclipse.swtbot.eclipse.test.junit4.feature.group" version="2.0.4.20110304_0338-e5aff47-dev-e35"/>
+<repository location="http://download.eclipse.org/technology/swtbot/galileo/dev-build/update-site"/>
 </location>
 </locations>
 <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
