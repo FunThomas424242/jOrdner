@@ -1,9 +1,9 @@
-Hinzufügen eines neuen Verzeichnisses c:\tmp\test zur Liste der verwalteten Verzeichnisse
+Hinzufügen eines neuen Verzeichnisses C:\tmp\test zur Liste der verwalteten Verzeichnisse
 Auslesen aller verwalteten Verzeichnisse
 Die Liste der verwalteten Verzeichnisse enhält 1 Einträge
-Eintrag 1 in der Liste der verwalteten Verzeichnisse heißt c:\tmp\test
+Eintrag 1 in der Liste der verwalteten Verzeichnisse heißt test mit Pfad C:\tmp\test
 
-Hinzufügen eines neuen Verzeichnisses c:\tmp\test1 zur Liste der verwalteten Verzeichnisse
+Hinzufügen eines neuen Verzeichnisses C:\tmp\test1 zur Liste der verwalteten Verzeichnisse
 Die Liste der verwalteten Verzeichnisse enhält 2 Einträge
-Eintrag 1 in der Liste der verwalteten Verzeichnisse heißt c:\tmp\test
-Eintrag 2 in der Liste der verwalteten Verzeichnisse heißt c:\tmp\test1
+Eintrag 1 in der Liste der verwalteten Verzeichnisse heißt test mit Pfad C:\tmp\test
+Eintrag 2 in der Liste der verwalteten Verzeichnisse heißt test1 mit Pfad C:\tmp\test1

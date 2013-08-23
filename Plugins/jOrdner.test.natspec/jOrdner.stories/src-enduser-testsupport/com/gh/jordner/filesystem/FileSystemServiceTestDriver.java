@@ -1,47 +1,38 @@
 package com.gh.jordner.filesystem;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 
 import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.filsesystem.FileSystemService;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
-import com.gh.jordner.jpa.filesystem.VerzeichnisDAO;
 
 import de.devboost.natspec.annotations.TextSyntax;
 
 public class FileSystemServiceTestDriver {
 
-	@Mock
-	private VerzeichnisDAO verzeichnisDAO;
-
 	@InjectMocks
 	private final FileSystemService fileService;
-
-	private final List<Verzeichnis> MANAGED_FOLDERS = new ArrayList<Verzeichnis>();
-
-	// given(verzeichnisDAO.listAllVerzeichnisse()).willReturn(1);
 
 	/**
 	 * Public constructor for test support class
 	 */
 	public FileSystemServiceTestDriver() {
 		super();
-		fileService = mock(FileSystemService.class);
+		fileService = new FileSystemService();
+		fileService.setVerzeichnisDAO(new VerzeichnisDAOMock());
 	}
 
 	@TextSyntax("Hinzufügen eines neuen Verzeichnisses #1 zur Liste der verwalteten Verzeichnisse")
 	public void hinzufügenEinesNeuenVerzeichnissesZurListeDerVerwaltetenVerzeichnisse(
 			final String folderPfad) {
 
-		final File file = new File(folderPfad);
+		final File file = convertPfad2File(folderPfad);
 		final Verzeichnis verzeichnis = new Verzeichnis();
 		verzeichnis.setName(file.getName());
 		verzeichnis.setParentPathURI(file.getParentFile().getAbsolutePath());
@@ -52,6 +43,11 @@ public class FileSystemServiceTestDriver {
 		} catch (DataAccessException e) {
 			fail(e.toString());
 		}
+	}
+
+	public File convertPfad2File(final String folderPfad) {
+		final File file = new File(folderPfad);
+		return file;
 	}
 
 	@TextSyntax("Auslesen aller verwalteten Verzeichnisse")
@@ -72,14 +68,14 @@ public class FileSystemServiceTestDriver {
 		assertEquals(itemCount, managedFolders.size());
 	}
 
-	@TextSyntax("Eintrag #1 in der Liste der verwalteten Verzeichnisse heißt #2")
+	@TextSyntax("Eintrag #1 in der Liste der verwalteten Verzeichnisse heißt #2 mit Pfad #3")
 	public void eintragInDerListeDerVerwaltetenVerzeichnisseHeißt(
-			final int itemIndex, final String folderName,
-			final List<Verzeichnis> managedFolders) {
+			final int itemIndex, final String verzeichnisName,
+			final String verzeichnisPfad, final List<Verzeichnis> managedFolders) {
 
-		final Verzeichnis verzeichnis = managedFolders.get(itemIndex);
-		final String verzeichnisName = verzeichnis.getName();
-		assertEquals(folderName, verzeichnisName);
+		final Verzeichnis verzeichnis = managedFolders.get(itemIndex - 1);
+		assertEquals(verzeichnisName, verzeichnis.getName());
+		assertEquals(verzeichnisPfad, verzeichnis.getParentPathURI());
 
 	}
 
