@@ -1,37 +1,40 @@
 package com.gh.jordner.filesystem;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 import com.gh.jordner.exceptions.DataAccessException;
 import com.gh.jordner.filsesystem.FileSystemService;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
+import com.gh.jordner.jpa.filesystem.VerzeichnisDAO;
 
 import de.devboost.natspec.annotations.TextSyntax;
 
 public class FileSystemServiceTestDriver {
 
-	// Service under Test
-	private FileSystemService fileService;
+	@Mock
+	private VerzeichnisDAO verzeichnisDAO;
 
-	// private final static List<Verzeichnis> MANAGED_FOLDERS = new
-	// ArrayList<Verzeichnis>();
+	@InjectMocks
+	private final FileSystemService fileService;
 
-	public FileSystemService getFileService() {
-		return fileService;
-	}
+	private final List<Verzeichnis> MANAGED_FOLDERS = new ArrayList<Verzeichnis>();
 
-	public void setFileService(FileSystemService fileService) {
-		this.fileService = fileService;
-	}
+	// given(verzeichnisDAO.listAllVerzeichnisse()).willReturn(1);
 
 	/**
 	 * Public constructor for test support class
 	 */
 	public FileSystemServiceTestDriver() {
 		super();
+		fileService = mock(FileSystemService.class);
 	}
 
 	@TextSyntax("Hinzufügen eines neuen Verzeichnisses #1 zur Liste der verwalteten Verzeichnisse")
