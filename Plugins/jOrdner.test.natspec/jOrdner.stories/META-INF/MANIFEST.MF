@@ -10,4 +10,6 @@ Require-Bundle: org.junit4,
  jOrdnerApp,
  jOrdner.api,
  org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0",
- jOrdner.jpa
+ jOrdner.jpa,
+ mockito.bundle,
+ org.junit
