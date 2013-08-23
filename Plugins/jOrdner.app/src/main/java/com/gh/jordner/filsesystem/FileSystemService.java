@@ -47,4 +47,8 @@ public class FileSystemService {
 		}
 
 	}
+
+	public void setVerzeichnisDAO(VerzeichnisDAO verzeichnisDAO) {
+		dao = verzeichnisDAO;
+	}
 }
