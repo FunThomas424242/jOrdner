@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.mockito.InjectMocks;
@@ -32,10 +34,10 @@ public class FileSystemServiceTestDriver {
 	public void hinzufügenEinesNeuenVerzeichnissesZurListeDerVerwaltetenVerzeichnisse(
 			final String folderPfad) {
 
-		final File file = convertPfad2File(folderPfad);
+		final Path path = convertPfad2File(folderPfad);
 		final Verzeichnis verzeichnis = new Verzeichnis();
-		verzeichnis.setName(file.getName());
-		verzeichnis.setParentPathURI(file.getParentFile().getAbsolutePath());
+		verzeichnis.setName(path.getFileName().toString());
+		verzeichnis.setParentPathURI(path.getParent().toString());
 
 		try {
 			fileService.addManagedFolder(verzeichnis);
@@ -45,9 +47,9 @@ public class FileSystemServiceTestDriver {
 		}
 	}
 
-	public File convertPfad2File(final String folderPfad) {
-		final File file = new File(folderPfad);
-		return file;
+	public Path convertPfad2File(final String folderPfad) {
+		Path path = Paths.get(folderPfad);
+		return path;
 	}
 
 	@TextSyntax("Auslesen aller verwalteten Verzeichnisse")
@@ -75,7 +77,8 @@ public class FileSystemServiceTestDriver {
 
 		final Verzeichnis verzeichnis = managedFolders.get(itemIndex - 1);
 		assertEquals(verzeichnisName, verzeichnis.getName());
-		assertEquals(verzeichnisPfad, verzeichnis.getParentPathURI());
+		assertEquals(verzeichnisPfad, verzeichnis.getParentPathURI()
+				+ File.separator + verzeichnis.getName());
 
 	}
 
