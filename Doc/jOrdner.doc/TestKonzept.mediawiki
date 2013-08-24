@@ -1,0 +1,39 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
+=Testkonzept=
+Autor: Thomas Schubert
+
+''Stand vom 24.08.2013''
+
+==Motivation==
+Unter Berücksichtigung der historischen Entwicklung der Testwerkzeuge und
+aktueller Trends werden folgende Ideen zur Defintion eines Testkonzeptes 
+benutzt.
+
+* GUI Test ist schwerfällig und soll wo möglich über Unit Tests abgedeckt werden.
+* Akzeptanztests sollen in Form von UserStories durchgeführt werden.
+* Die aus der BDD bekannten Stories lassen sich auf allen Ebenen zur Testautomatisierung einsetzen.
+* Wo möglich soll statt einem Mock die konkrete Implementierung benutzt werden.
+* Die Schnittstelle zur Datenbank wird separat über Tests der DAOs abgesichert
+* Beim GUI Test wird eine schnelle In Memory Datenbank benutzt.
+
+==Regelwerk==
+Dieses Regelwerk ist bei der Implementierung zu beachten.
+
+==DAO Schicht==
+# Beim Modultest werden die DAO Implementierungen durch FAKE Implementierungen ersetzt.
+# Diese Fake Klassen tragen den Namen des DAO erweitert um den Postfix MOCK
+# Die Fake Klassen erben von den DAO's damit sie statt der DAOs injiziert werden können.
+# Alle Klassen in die DAOs injiziert werden müssen, haben dazu getter und setter bereitzustellen
+# Ein DAO Mock muss alle Methoden des DAOs überschreiben und darf keine super() Aufrufe enthalten
+# Eine Fake Klassen muss die Logik des DAOs als InMemory Variante implementieren z.B. statt Datenbanktabelle eine Map
+# Die Fake Klasse muss genau wie das JPA Framework eine Id vergeben
+
+==DAO vs. FAKE==
+# Um Den Fake für alle Tests nutzen zu können muss sichergestellt werden, dass er exakt wie das Original funktioniert.
+# Daher werden extra JUnit Tests gebaut welche das DAO gegen den Fake testen. 
+# Dazu werden der eigentliche JUnit Tests gegen die Fake Klasse geschrieben.
+# Zusätzlich werden JUnit Tests von den Tests abgeleitet und das zu testende DAO durch das echte ersetzt. Der Rest der Test bleibt gleich. Zusätzlich wird noch ein InMemoryDatenbank bereitgestellt.  
+
+
+==Literaturquellen==
+
