@@ -28,7 +28,7 @@ public class FileSystemServiceBasics {
 
 	@Test
 	public void executeScript() throws Exception {
-		// The code in this method is generated from: /jOrdner.test.natspec/src-endusertests/com/gh/jordner/filesystem/FileSystemServiceBasics.natspec
+		// The code in this method is generated from: /jOrdner.app.test.natspec/src-endusertests/com/gh/jordner/filesystem/FileSystemServiceBasics.natspec
 		// Never change this method or any contents of this file, all local changes will be overwritten.
 		
 		// Hinzufügen eines neuen Verzeichnisses C:\\tmp\\test zur Liste der verwalteten Verzeichnisse

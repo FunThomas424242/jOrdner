@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>jOrdner.test.natspec</name>
+	<name>jOrdner.app.test.swtbot</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -20,15 +20,9 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>de.devboost.natspec.resource.natspec.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>de.devboost.natspec.resource.natspec.nature</nature>
 	</natures>
 </projectDescription>
