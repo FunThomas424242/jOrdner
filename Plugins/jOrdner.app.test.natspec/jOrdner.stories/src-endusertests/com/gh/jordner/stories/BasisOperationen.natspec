@@ -1,13 +1,16 @@
-Erstelle ein Verzeichnis /tmp/test/folder1
-Es existiert /tmp/test/folder1 vom Typ Verzeichnis
-Erstelle ein Verzeichnis /tmp/test/folder2
-Es existiert /tmp/test/folder2 vom Typ Verzeichnis 
-Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder1 
-Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder2
-Importiere das Verzeichnis /tmp/test
-Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder1
-Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder2
-Lösche Verzeichnis /tmp/test/folder1
-Lösche Verzeichnis /tmp/test/folder2
+// Testvorbereitung auf lokaler PC Festplatte
+Erstelle lokal das Verzeichnis C:\\\\tmp\\\\test\\\\folder1
+Erstelle lokal das Verzeichnis C:\\\\tmp\\\\test\\\\folder2
+Es existiert C:\\\\tmp\\\\test\\\\folder1 vom Typ Verzeichnis
+Es existiert C:\\\\tmp\\\\test\\\\folder2 vom Typ Verzeichnis
 
- 
+// Testdurchführung
+Füge das Verzeichnis C:\\\\tmp\\\\test zur Liste der verwalteten Verzeichnisse hinzu
+Importiere den Inhalt vom Verzeichnis C:\\\\tmp\\\\test
+Es existiert ein Datenbankeintrag test vom Typ Verzeichnis mit Pfad C:\\\\tmp\\\\test\\\\folder1
+Es existiert ein Datenbankeintrag Test1.txt vom Typ Verzeichnis mit Pfad C:\\\\tmp\\\\test\\\\folder2
+
+// Testnachbereitung
+Lösche Verzeichnis C:\\\\tmp\\\\test\\\\folder1
+Lösche Verzeichnis C:\\\\tmp\\\\test\\\\folder2
+

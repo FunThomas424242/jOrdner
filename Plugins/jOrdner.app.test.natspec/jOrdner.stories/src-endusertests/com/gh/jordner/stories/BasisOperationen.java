@@ -21,28 +21,26 @@ public class BasisOperationen {
 		// The code in this method is generated from: /jOrdner.app.test.natspec/src-endusertests/com/gh/jordner/stories/BasisOperationen.natspec
 		// Never change this method or any contents of this file, all local changes will be overwritten.
 		
-		// Erstelle ein Verzeichnis /tmp/test/folder1
-		testSupport.createEntry("/tmp/test/folder1");
-		// Es existiert /tmp/test/folder1 vom Typ Verzeichnis
-		testSupport.esExistiertVomTypVerzeichnis("/tmp/test/folder1");
-		// Erstelle ein Verzeichnis /tmp/test/folder2
-		testSupport.createEntry("/tmp/test/folder2");
-		// Es existiert /tmp/test/folder2 vom Typ Verzeichnis
-		testSupport.esExistiertVomTypVerzeichnis("/tmp/test/folder2");
-		// Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder1
-		testSupport.erstelleEineDateiImVerzeichnis("Test1.txt", "/tmp/test/folder1");
-		// Erstelle eine Datei Test1.txt im Verzeichnis /tmp/test/folder2
-		testSupport.erstelleEineDateiImVerzeichnis("Test1.txt", "/tmp/test/folder2");
-		// Importiere das Verzeichnis /tmp/test
-		testSupport.importiereDasVerzeichnisTmptest("/tmp/test");
-		// Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder1
-		testSupport.esExistiertEinDatenbankeintragMitPfad("Test1.txt", "/tmp/test/folder1");
-		// Es existiert ein Datenbankeintrag Test1.txt mit Pfad /tmp/test/folder2
-		testSupport.esExistiertEinDatenbankeintragMitPfad("Test1.txt", "/tmp/test/folder2");
-		// Lösche Verzeichnis /tmp/test/folder1
-		testSupport.löscheVerzeichnis("/tmp/test/folder1");
-		// Lösche Verzeichnis /tmp/test/folder2
-		testSupport.löscheVerzeichnis("/tmp/test/folder2");
+		// Erstelle lokal das Verzeichnis C:\\tmp\\test\\folder1
+		testSupport.createEntry("C:\\tmp\\test\\folder1");
+		// Erstelle lokal das Verzeichnis C:\\tmp\\test\\folder2
+		testSupport.createEntry("C:\\tmp\\test\\folder2");
+		// Es existiert C:\\tmp\\test\\folder1 vom Typ Verzeichnis
+		testSupport.esExistiertVomTypVerzeichnis("C:\\tmp\\test\\folder1");
+		// Es existiert C:\\tmp\\test\\folder2 vom Typ Verzeichnis
+		testSupport.esExistiertVomTypVerzeichnis("C:\\tmp\\test\\folder2");
+		// Füge das Verzeichnis C:\\tmp\\test zur Liste der verwalteten Verzeichnisse hinzu
+		testSupport.hinzufügenEinesNeuenVerzeichnissesZurListeDerVerwaltetenVerzeichnisse("C:\\tmp\\test");
+		// Importiere den Inhalt vom Verzeichnis C:\\tmp\\test
+		testSupport.importiereDasVerzeichnisTmptest("C:\\tmp\\test");
+		// Es existiert ein Datenbankeintrag test vom Typ Verzeichnis mit Pfad C:\\tmp\\test\\folder1
+		testSupport.esExistiertEinDatenbankeintragMitPfad("test", "C:\\tmp\\test\\folder1");
+		// Es existiert ein Datenbankeintrag Test1.txt vom Typ Verzeichnis mit Pfad C:\\tmp\\test\\folder2
+		testSupport.esExistiertEinDatenbankeintragMitPfad("Test1.txt", "C:\\tmp\\test\\folder2");
+		// Lösche Verzeichnis C:\\tmp\\test\\folder1
+		testSupport.löscheVerzeichnis("C:\\tmp\\test\\folder1");
+		// Lösche Verzeichnis C:\\tmp\\test\\folder2
+		testSupport.löscheVerzeichnis("C:\\tmp\\test\\folder2");
 		
 	}
 	
