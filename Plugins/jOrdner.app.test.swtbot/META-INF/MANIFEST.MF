@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Swtbot
+Bundle-Name: SWTBot
 Bundle-SymbolicName: jOrdner.app.test.swtbot
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
