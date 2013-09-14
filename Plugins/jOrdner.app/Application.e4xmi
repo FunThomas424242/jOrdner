@@ -5,23 +5,23 @@
       <children xsi:type="advanced:Perspective" xmi:id="_iFi9U_C1EeKZWoEocgebgw">
         <children xsi:type="basic:PartSashContainer" xmi:id="_iFi9VPC1EeKZWoEocgebgw" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_iFi9VfC1EeKZWoEocgebgw">
-            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.VerzeichnisPart" label="Verwaltete Verzeichnisse">
-              <handlers xmi:id="_S45TMAUJEeOlU7k-e1eZ_g" elementId="jordner.app.handler.removeFolder" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.RemoveVerzeichnisHandler" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
+            <children xsi:type="basic:Part" xmi:id="_iFi9VvC1EeKZWoEocgebgw" elementId="jordner.app.part.verzeichnisse" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.VerzeichnisPart" label="Verwaltete Verzeichnisse">
+              <handlers xmi:id="_S45TMAUJEeOlU7k-e1eZ_g" elementId="jordner.app.handler.removeFolder" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.RemoveVerzeichnisHandler" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
               <menus xsi:type="menu:PopupMenu" xmi:id="_mC-U8ARlEeOL2Im0bYDF0A" elementId="jordner.app.popupmenu.folderlist" label="Table">
                 <children xsi:type="menu:HandledMenuItem" xmi:id="_0r5GIARlEeOL2Im0bYDF0A" elementId="jordner.app.handledmenuitem.rmfolder" label="Remove Folder" command="_p3oVQAUIEeOlU7k-e1eZ_g"/>
               </menus>
             </children>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_dmjHgPFnEeKrZ9elB2QiSw" elementId="jordner.app.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.detaillist.DetailsPart" label="Details"/>
+            <children xsi:type="basic:Part" xmi:id="_eLWdsPFnEeKrZ9elB2QiSw" elementId="jordner.app.part.details" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.detaillist.DetailsPart" label="Details"/>
           </children>
         </children>
       </children>
     </children>
     <mainMenu xmi:id="_iFi9S_C1EeKZWoEocgebgw" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_iFi9TPC1EeKZWoEocgebgw" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9TfC1EeKZWoEocgebgw" label="Open" iconURI="platform:/plugin/jOrdnerApp/icons/sample.gif" command="_iFi9QvC1EeKZWoEocgebgw"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9TvC1EeKZWoEocgebgw" label="Save" iconURI="platform:/plugin/jOrdnerApp/icons/save_edit.gif" command="_iFi9RfC1EeKZWoEocgebgw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9TfC1EeKZWoEocgebgw" label="Open" iconURI="platform:/plugin/jOrdner.app/icons/sample.gif" command="_iFi9QvC1EeKZWoEocgebgw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9TvC1EeKZWoEocgebgw" label="Save" iconURI="platform:/plugin/jOrdner.app/icons/save_edit.gif" command="_iFi9RfC1EeKZWoEocgebgw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9T_C1EeKZWoEocgebgw" label="Quit" command="_iFiWPPC1EeKZWoEocgebgw"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_iFi9UPC1EeKZWoEocgebgw" label="Help">
@@ -30,15 +30,15 @@
     </mainMenu>
     <trimBars xmi:id="_iFi9V_C1EeKZWoEocgebgw">
       <children xsi:type="menu:ToolBar" xmi:id="_iFi9WPC1EeKZWoEocgebgw" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_iFi9WfC1EeKZWoEocgebgw" iconURI="platform:/plugin/jOrdnerApp/icons/sample.gif" command="_iFi9QvC1EeKZWoEocgebgw"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_iFi9WvC1EeKZWoEocgebgw" iconURI="platform:/plugin/jOrdnerApp/icons/save_edit.gif" command="_iFi9RfC1EeKZWoEocgebgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_iFi9WfC1EeKZWoEocgebgw" iconURI="platform:/plugin/jOrdner.app/icons/sample.gif" command="_iFi9QvC1EeKZWoEocgebgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_iFi9WvC1EeKZWoEocgebgw" iconURI="platform:/plugin/jOrdner.app/icons/save_edit.gif" command="_iFi9RfC1EeKZWoEocgebgw"/>
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.actions.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.AddVerzeichnisHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.folderlist.SaveVerzeichnisListHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
-  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdnerApp/com.gh.jordner.gui.actions.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFiWPfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.quitCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.gui.actions.QuitHandler" command="_iFiWPPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.AddVerzeichnisHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.SaveVerzeichnisListHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.gui.actions.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
   <bindingTables xmi:id="_iFi9QPC1EeKZWoEocgebgw" bindingContext="_iFiWOfC1EeKZWoEocgebgw">
     <bindings xmi:id="_iFi9QfC1EeKZWoEocgebgw" keySequence="M1+Q" command="_iFiWPPC1EeKZWoEocgebgw"/>
     <bindings xmi:id="_iFi9RPC1EeKZWoEocgebgw" keySequence="M1+O" command="_iFi9QvC1EeKZWoEocgebgw"/>
@@ -50,7 +50,7 @@
     <children xmi:id="_iFiWO_C1EeKZWoEocgebgw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
   <commands xmi:id="_iFiWPPC1EeKZWoEocgebgw" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
-  <commands xmi:id="_iFi9QvC1EeKZWoEocgebgw" elementId="jOrdnerApp.open" commandName="openCommand"/>
+  <commands xmi:id="_iFi9QvC1EeKZWoEocgebgw" elementId="jordner.app.command.open" commandName="openCommand"/>
   <commands xmi:id="_iFi9RfC1EeKZWoEocgebgw" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_iFi9SPC1EeKZWoEocgebgw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_p3oVQAUIEeOlU7k-e1eZ_g" elementId="jordner.app.command.delete" commandName="deleteCommand"/>

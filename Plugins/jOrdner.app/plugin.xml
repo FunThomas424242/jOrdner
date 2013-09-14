@@ -5,7 +5,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="jOrdnerApp"
+            name="jOrdner.app"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="clearPersistedState"
@@ -13,11 +13,11 @@
          </property>
          <property
                name="applicationCSS"
-               value="platform:/plugin/jOrdnerApp/css/default.css">
+               value="platform:/plugin/jOrdner.app/css/default.css">
          </property>
          <property
                name="appName"
-               value="jOrdnerApp">
+               value="jOrdner.app">
          </property>
       </product>
    </extension>

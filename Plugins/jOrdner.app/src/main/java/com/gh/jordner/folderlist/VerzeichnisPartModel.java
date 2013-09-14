@@ -72,7 +72,7 @@ public class VerzeichnisPartModel {
 				fileSystemService.addManagedFolder(verzeichnis);
 			} catch (DataAccessException ex) {
 
-				final Bundle bundle = Platform.getBundle("jOrdnerApp");
+				final Bundle bundle = Platform.getBundle("jOrdner.app");
 				@SuppressWarnings("unused")
 				final ErrorMessageDialog errorDialog = new ErrorMessageDialog(
 						logger, bundle, "Datenzugriffsfehler", this.getClass(),

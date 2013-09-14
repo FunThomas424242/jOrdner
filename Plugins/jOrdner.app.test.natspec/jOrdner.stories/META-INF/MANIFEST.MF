@@ -7,7 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.junit4,
  de.devboost.natspec.annotations,
  javax.inject;bundle-version="1.0.0",
- jOrdnerApp,
+ jOrdner.app,
  jOrdner.api,
  org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0",
  jOrdner.jpa,

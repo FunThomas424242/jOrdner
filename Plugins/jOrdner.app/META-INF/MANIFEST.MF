@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: JOrdnerApp
-Bundle-SymbolicName: jOrdnerApp;singleton:=true
+Bundle-Name: jOrdner.app
+Bundle-SymbolicName: jOrdner.app;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
 Require-Bundle: jOrdner.api,
