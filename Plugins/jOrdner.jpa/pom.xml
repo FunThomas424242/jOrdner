@@ -13,11 +13,13 @@
 	</parent>
 
 	<groupId>gh.funthomas424242.jOrdner</groupId>
-	<artifactId>jOrdner.app</artifactId>
+	<artifactId>jOrdner.jpa</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 
 	<url>http://maven.apache.org</url>
+
+
 
 
 

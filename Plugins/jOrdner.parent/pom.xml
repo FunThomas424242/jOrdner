@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>gh.funthomas424242.jOrdner</groupId>
+	<artifactId>jOrdner.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<properties>
+		<tycho-version>0.16.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform-version-name>kepler</platform-version-name>
+		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
+	</properties>
+
+
+
+
+	<profiles>
+		<profile>
+			<id>platform-kepler</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>kepler</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>
+					http://download.eclipse.org/releases/kepler</eclipse-site>
+				<platform-version>[4.2,4.3)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-ganymede</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>ganymede</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/ganymede</eclipse-site>
+				<platform-version>[3.4,3.5)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-galileo</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>galileo</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/galileo</eclipse-site>
+				<platform-version>[3.5,3.6)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-helios</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>helios</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/helios</eclipse-site>
+				<platform-version>[3.6,3.7)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-indigo</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>indigo</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/indigo</eclipse-site>
+				<platform-version>[3.7,3.8)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-juno</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>juno</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/juno</eclipse-site>
+				<platform-version>[4.2,4.3)</platform-version>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	<repositories>
+		<repository>
+			<id>org.eclipse.release</id>
+			<layout>p2</layout>
+			<url>${eclipse-site}</url>
+		</repository>
+		<repository>
+			<id>gemini-jpa-repo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/gemini/jpa/updates</url>
+		</repository>
+		<repository>
+			<id>gemini-jpaupdates-repo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/gemini/updates/jpa/1.1.0</url>
+		</repository>
+		<repository>
+			<id>gemini-dbaccess-repo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/gemini/updates/dbaccess/1.1.0</url>
+		</repository>
+		<repository>
+			<id>gemini-di-repo</id>
+			<layout>p2</layout>
+			<url>http://repository.mukis.de/p2/org.eclipse.gemini.ext.di/1.1.0</url>
+		</repository>
+		<repository>
+			<id>nat-spec-repo</id>
+			<!-- layout>p2</layout-->
+			<url>http://www.nat-spec.com/update</url>
+		</repository>
+		
+		
+		<!--repository> <id>org.projectusus.jfeet</id> <layout>p2</layout> <url>http://usus.github.com/JFeet</url> 
+			</repository> <repository> <id>org.swtchart</id> <layout>p2</layout> <url>http://usus.github.com/swtchart</url> 
+			</repository> <repository> <id>JBOSS_NEXUS</id> <url>http://repository.jboss.org/nexus/content/groups/public</url> 
+			</repository -->
+	</repositories>
+
+
+	<modules>
+		<module>../jOrdner.platform/pom.xml</module>
+		<module>../jOrdner.api/pom.xml</module>
+		<module>../jOrdner.jpa/pom.xml</module>
+		<module>../jOrdner.app/pom.xml</module>
+	</modules>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<!--target> <artifact> <groupId>gh.funthomas424242.jOrdner</groupId> 
+						<artifactId>jOrdner.platform</artifactId> <version>${project.version}</version> 
+						</artifact> </target -->
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+					<ignoreTychoRepositories>false</ignoreTychoRepositories>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+					<failIfNoTests>false</failIfNoTests>
+					<showEclipseLog>true</showEclipseLog>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<deployableFeature>true</deployableFeature>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+		<pluginManagement>
+			<plugins>
+
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>
