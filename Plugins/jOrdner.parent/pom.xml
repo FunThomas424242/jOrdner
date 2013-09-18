@@ -148,6 +148,7 @@
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
 		<module>../jOrdner.app/pom.xml</module>
+		<module>../jOrdner.app.test.natspec/pom.xml</module>
 	</modules>
 
 

@@ -12,4 +12,6 @@ Require-Bundle: org.junit4,
  org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0",
  jOrdner.jpa,
  mockito.bundle,
- org.junit
+ org.junit,
+ org.eclipse.swtbot.swt.finder,
+ org.eclipse.swtbot.go;bundle-version="2.0.4"
