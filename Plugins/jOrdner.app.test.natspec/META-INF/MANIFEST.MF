@@ -4,14 +4,13 @@ Bundle-Name: NatSpec Examples Project
 Bundle-SymbolicName: jOrdner.app.test.natspec
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.junit4,
- de.devboost.natspec.annotations,
+Require-Bundle: de.devboost.natspec.annotations;bundle-version="2.1.0",
  javax.inject;bundle-version="1.0.0",
  jOrdner.app,
  jOrdner.api,
  org.sonatype.m2e.mavenarchiver;bundle-version="0.15.0",
  jOrdner.jpa,
+ org.junit;bundle-version="4.11.0",
  mockito.bundle,
- org.junit,
  org.eclipse.swtbot.swt.finder,
  org.eclipse.swtbot.go;bundle-version="2.0.4"
