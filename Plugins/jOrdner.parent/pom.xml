@@ -150,14 +150,14 @@
 
 
 	<modules>
-		<module>../../Libs/junit4.11.bundle/pom.xml</module>
+		<!-- module>../../Libs/junit4.11.bundle/pom.xml</module>
 		<module>../../Libs/junit4.5.bundle/pom.xml</module>
 		<module>../../Libs/mockito.bundle/pom.xml</module>
+		<module>../jOrdner.app.test.natspec/pom.xml</module-->
 		<module>../jOrdner.platform/pom.xml</module>
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
 		<module>../jOrdner.app/pom.xml</module>
-		<module>../jOrdner.app.test.natspec/pom.xml</module>
 	</modules>
 
 
