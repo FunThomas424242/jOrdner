@@ -1,8 +1,10 @@
 package com.gh.jordner.gui.stories;
 
+import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 /**
  * JUnit test case generated from the file #className#.natspec.
@@ -10,6 +12,7 @@ import org.junit.Test;
  * Never modify this file. It will be overwritten by any changes in
  * #className#.natspec.
  */
+@RunWith(SWTBotJunit4ClassRunner.class)
 public class EclipseActions {
 
 	private EclipseActionDriver eclipseActionDriver = null;

@@ -4,13 +4,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gh.jordner.stories.TestSupport;
-
 /**
- * JUnit test case generated from the file #className#.natspec. 
- *
- * Never modify this file. It will be overwritten by any changes
- * in #className#.natspec. 
+ * JUnit test case generated from the file #className#.natspec.
+ * 
+ * Never modify this file. It will be overwritten by any changes in
+ * #className#.natspec.
  */
 public class BasisOperationen {
 
@@ -43,15 +41,15 @@ public class BasisOperationen {
 		testSupport.löscheVerzeichnis("C:\\tmp\\test\\folder2");
 		
 	}
-	
+
 	@Before
 	public void setUp() {
 		testSupport = new TestSupport();
 	}
-	
-	@After 
+
+	@After
 	public void shutdown() {
-		if (testSupport != null)  
+		if (testSupport != null)
 			testSupport = null;
 	}
 }

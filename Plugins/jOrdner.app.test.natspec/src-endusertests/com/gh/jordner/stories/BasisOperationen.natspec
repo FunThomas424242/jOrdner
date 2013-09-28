@@ -13,4 +13,3 @@ Es existiert ein Datenbankeintrag Test1.txt vom Typ Verzeichnis mit Pfad C:\\\\t
 // Testnachbereitung
 Lösche Verzeichnis C:\\\\tmp\\\\test\\\\folder1
 Lösche Verzeichnis C:\\\\tmp\\\\test\\\\folder2
-
