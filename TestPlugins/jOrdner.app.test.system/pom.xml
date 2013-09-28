@@ -41,23 +41,8 @@
 				<configuration>
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>false</useUIThread>
-					<product>jOrdner.app</product>
-					<!--application>org.eclipse.ui.ide.workbench</application -->
-					<!--dependency>
-						<type>p2-installable-unit</type>
-						<artifactId>org.hamcrest</artifactId>
-
-					</dependency>
-					<dependency>
-						<type>p2-installable-unit</type>
-						<artifactId>org.junit4</artifactId>
-
-					</dependency>
-					<dependency>
-						<type>p2-installable-unit</type>
-						<artifactId>org.eclipse.sdk.ide</artifactId>
-						<version>0.0.0</version>
-					</dependency-->
+					<product>jOrdner.app.product</product>
+					<application>org.eclipse.e4.ui.workbench.swt.E4Application</application>
 				</configuration>
 			</plugin>
 		</plugins>

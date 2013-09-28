@@ -15,6 +15,10 @@
                name="applicationCSS"
                value="platform:/plugin/jOrdner.app/css/default.css">
          </property>
+          <property
+               name="applicationXMI"
+               value="jOrdner.app/Application.e4xmi">
+         </property>
          <property
                name="appName"
                value="jOrdner.app">

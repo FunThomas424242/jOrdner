@@ -172,6 +172,7 @@
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
 		<module>../jOrdner.app/pom.xml</module>
+		<module>../../TestPlugins/jOrdner.app.test.system/pom.xml</module>
 	</modules>
 
 
@@ -261,37 +262,16 @@
 					<artifactId>target-platform-configuration</artifactId>
 					<version>${tycho-version}</version>
 				</plugin>
-				<!--plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-compiler-plugin</artifactId>
-					<version>${tycho-version}</version>
-					<configuration>
-						<compilerArguments>
-							<inlineJSR />
-							<enableJavadoc />
-							<encoding>ISO-8859-1</encoding>
-						</compilerArguments>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-packaging-plugin</artifactId>
-					<version>${tycho-version}</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.eclipse.tycho.extras</groupId>
-							<artifactId>tycho-buildtimestamp-jgit</artifactId>
-							<version>${tycho-extras.version}</version>
-						</dependency>
-					</dependencies>
-					<configuration>
-						<strictBinIncludes>false</strictBinIncludes>
-						<format>'v'yyyyMMdd-HHmm</format>
-						<timestampProvider>jgit</timestampProvider>
-						<jgit.ignore>
-						</jgit.ignore>
-					</configuration>
-				</plugin-->
+				<!--plugin> <groupId>org.eclipse.tycho</groupId> <artifactId>tycho-compiler-plugin</artifactId> 
+					<version>${tycho-version}</version> <configuration> <compilerArguments> <inlineJSR 
+					/> <enableJavadoc /> <encoding>ISO-8859-1</encoding> </compilerArguments> 
+					</configuration> </plugin> <plugin> <groupId>org.eclipse.tycho</groupId> 
+					<artifactId>tycho-packaging-plugin</artifactId> <version>${tycho-version}</version> 
+					<dependencies> <dependency> <groupId>org.eclipse.tycho.extras</groupId> <artifactId>tycho-buildtimestamp-jgit</artifactId> 
+					<version>${tycho-extras.version}</version> </dependency> </dependencies> 
+					<configuration> <strictBinIncludes>false</strictBinIncludes> <format>'v'yyyyMMdd-HHmm</format> 
+					<timestampProvider>jgit</timestampProvider> <jgit.ignore> </jgit.ignore> 
+					</configuration> </plugin -->
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-surefire-plugin</artifactId>
@@ -318,12 +298,12 @@
 				<plugin>
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-source-feature-plugin</artifactId>
-					<!--version>${tycho-extras.version}</version-->
+					<!--version>${tycho-extras.version}</version -->
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-custom-bundle-plugin</artifactId>
-					<!--version>${tycho-extras.version}</version-->
+					<!--version>${tycho-extras.version}</version -->
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
