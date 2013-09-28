@@ -20,6 +20,15 @@
 	<url>http://maven.apache.org</url>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/endusertests</directory>
+				<excludes>
+					<exclude>**/*.natspec</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
