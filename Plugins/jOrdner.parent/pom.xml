@@ -17,10 +17,20 @@
 		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
 	</properties>
 
-
-
-
 	<profiles>
+		<profile>
+			<id>platform-luna</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>luna</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site> http://download.eclipse.org/releases/luna</eclipse-site>
+				<platform-version>[4.4,4.5)</platform-version>
+			</properties>
+		</profile>
 		<profile>
 			<id>platform-kepler</id>
 			<activation>
@@ -31,46 +41,20 @@
 			</activation>
 			<properties>
 				<eclipse-site> http://download.eclipse.org/releases/kepler</eclipse-site>
+				<platform-version>[4.3,4.4)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-juno</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>juno</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/juno</eclipse-site>
 				<platform-version>[4.2,4.3)</platform-version>
-			</properties>
-		</profile>
-		<profile>
-			<id>platform-ganymede</id>
-			<activation>
-				<property>
-					<name>platform-version-name</name>
-					<value>ganymede</value>
-				</property>
-			</activation>
-			<properties>
-				<eclipse-site>http://download.eclipse.org/releases/ganymede</eclipse-site>
-				<platform-version>[3.4,3.5)</platform-version>
-			</properties>
-		</profile>
-		<profile>
-			<id>platform-galileo</id>
-			<activation>
-				<property>
-					<name>platform-version-name</name>
-					<value>galileo</value>
-				</property>
-			</activation>
-			<properties>
-				<eclipse-site>http://download.eclipse.org/releases/galileo</eclipse-site>
-				<platform-version>[3.5,3.6)</platform-version>
-			</properties>
-		</profile>
-		<profile>
-			<id>platform-helios</id>
-			<activation>
-				<property>
-					<name>platform-version-name</name>
-					<value>helios</value>
-				</property>
-			</activation>
-			<properties>
-				<eclipse-site>http://download.eclipse.org/releases/helios</eclipse-site>
-				<platform-version>[3.6,3.7)</platform-version>
 			</properties>
 		</profile>
 		<profile>
@@ -87,18 +71,48 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>platform-juno</id>
+			<id>platform-helios</id>
 			<activation>
 				<property>
 					<name>platform-version-name</name>
-					<value>juno</value>
+					<value>helios</value>
 				</property>
 			</activation>
 			<properties>
-				<eclipse-site>http://download.eclipse.org/releases/juno</eclipse-site>
-				<platform-version>[4.2,4.3)</platform-version>
+				<eclipse-site>http://download.eclipse.org/releases/helios</eclipse-site>
+				<platform-version>[3.6,3.7)</platform-version>
 			</properties>
 		</profile>
+		<profile>
+			<id>platform-galileo</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>galileo</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/galileo</eclipse-site>
+				<platform-version>[3.5,3.6)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-ganymede</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>ganymede</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/ganymede</eclipse-site>
+				<platform-version>[3.4,3.5)</platform-version>
+			</properties>
+		</profile>
+
+
+
+
 	</profiles>
 
 
@@ -133,13 +147,15 @@
 			<!-- layout>p2</layout -->
 			<url>http://www.nat-spec.com/update</url>
 		</repository>
-
-		<!--repository> <id>galileo</id> <layout>p2</layout> <url>http://download.eclipse.org/releases/galileo</url> 
-			</repository -->
 		<repository>
-			<id>swtbot</id>
+			<id>swtbot-latest-release</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site</url>
+			<url>http://download.eclipse.org/technology/swtbot/releases/latest/</url>
+		</repository>
+		<repository>
+			<id>swtbot-snapshot</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/technology/swtbot/snapshots/</url>
 		</repository>
 
 		<!--repository> <id>org.projectusus.jfeet</id> <layout>p2</layout> <url>http://usus.github.com/JFeet</url> 
@@ -150,10 +166,8 @@
 
 
 	<modules>
-		<!-- module>../../Libs/junit4.11.bundle/pom.xml</module>
-		<module>../../Libs/junit4.5.bundle/pom.xml</module>
-		<module>../../Libs/mockito.bundle/pom.xml</module>
-		<module>../jOrdner.app.test.natspec/pom.xml</module-->
+		<!-- module>../../Libs/junit4.11.bundle/pom.xml</module> <module>../../Libs/junit4.5.bundle/pom.xml</module> 
+			<module>../../Libs/mockito.bundle/pom.xml</module> <module>../jOrdner.app.test.natspec/pom.xml</module -->
 		<module>../jOrdner.platform/pom.xml</module>
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
@@ -242,8 +256,89 @@
 
 		<pluginManagement>
 			<plugins>
-
-
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<!--plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<compilerArguments>
+							<inlineJSR />
+							<enableJavadoc />
+							<encoding>ISO-8859-1</encoding>
+						</compilerArguments>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.eclipse.tycho.extras</groupId>
+							<artifactId>tycho-buildtimestamp-jgit</artifactId>
+							<version>${tycho-extras.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<strictBinIncludes>false</strictBinIncludes>
+						<format>'v'yyyyMMdd-HHmm</format>
+						<timestampProvider>jgit</timestampProvider>
+						<jgit.ignore>
+						</jgit.ignore>
+					</configuration>
+				</plugin-->
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<strictSrcIncludes>false</strictSrcIncludes>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<!--version>${tycho-extras.version}</version-->
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-custom-bundle-plugin</artifactId>
+					<!--version>${tycho-extras.version}</version-->
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<baselineMode>warn</baselineMode>
+						<baselineReplace>none</baselineReplace>
+						<baselineRepositories>
+							<repository>
+								<url>http://download.eclipse.org/eclipse/updates/4.2</url>
+							</repository>
+						</baselineRepositories>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
