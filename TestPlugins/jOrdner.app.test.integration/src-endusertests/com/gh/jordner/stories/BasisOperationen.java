@@ -16,7 +16,7 @@ public class BasisOperationen {
 
 	@Test
 	public void executeScript() throws Exception {
-		// The code in this method is generated from: /jOrdner.app.test.natspec/src-endusertests/com/gh/jordner/stories/BasisOperationen.natspec
+		// The code in this method is generated from: /jOrdner.app.test.integration/src-endusertests/com/gh/jordner/stories/BasisOperationen.natspec
 		// Never change this method or any contents of this file, all local changes will be overwritten.
 		
 		// Erstelle lokal das Verzeichnis C:\\tmp\\test\\folder1

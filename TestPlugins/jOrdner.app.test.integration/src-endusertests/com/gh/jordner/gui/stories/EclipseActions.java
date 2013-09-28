@@ -19,7 +19,7 @@ public class EclipseActions {
 
 	@Test
 	public void executeScript() throws Exception {
-		// The code in this method is generated from: /jOrdner.app.test.natspec/src-endusertests/com/gh/jordner/gui/stories/EclipseActions.natspec
+		// The code in this method is generated from: /jOrdner.app.test.integration/src-endusertests/com/gh/jordner/gui/stories/EclipseActions.natspec
 		// Never change this method or any contents of this file, all local changes will be overwritten.
 		
 		// Starte jOrdner

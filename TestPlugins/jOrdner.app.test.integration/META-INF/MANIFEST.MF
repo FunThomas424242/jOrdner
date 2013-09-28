@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: NatSpec Examples Project
-Bundle-SymbolicName: jOrdner.app.test.natspec
+Bundle-SymbolicName: jOrdner.app.test.integration
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: de.devboost.natspec.annotations,
