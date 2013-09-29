@@ -8,7 +8,7 @@ Eclipse RCP Anwendung um große Verzeichnisse zu säubern und ggf auch zu sicher
 
 Build Status Latest: [![Build Status](https://travis-ci.org/FunThomas424242/jOrdner.png?branch=master)](https://travis-ci.org/FunThomas424242/jOrdner)
 
-Build Status Daily:
+Build Status Daily: [![Build Status](https://funthomas424242.ci.cloudbees.com/buildStatus/icon?job=jOrdner)](https://funthomas424242.ci.cloudbees.com/job/jOrdner/)
 
 **Project Site:** http://funthomas424242.github.com/jOrdner/
 
