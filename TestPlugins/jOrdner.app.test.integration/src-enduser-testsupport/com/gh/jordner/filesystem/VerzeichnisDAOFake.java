@@ -7,11 +7,11 @@ import java.util.List;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 import com.gh.jordner.jpa.filesystem.VerzeichnisDAO;
 
-public class VerzeichnisDAOMock extends VerzeichnisDAO {
+public class VerzeichnisDAOFake extends VerzeichnisDAO {
 
 	private final List<Verzeichnis> MANAGED_FOLDERS = new ArrayList<Verzeichnis>();
 
-	public VerzeichnisDAOMock() {
+	public VerzeichnisDAOFake() {
 		super();
 	}
 

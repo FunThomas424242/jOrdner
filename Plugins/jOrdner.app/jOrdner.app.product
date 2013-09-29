@@ -99,10 +99,7 @@
       <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
-      <plugin id="org.eclipse.gemini.dbaccess.derby"/>
       <plugin id="org.eclipse.gemini.dbaccess.h2"/>
-      <plugin id="org.eclipse.gemini.dbaccess.hsqldb"/>
-      <plugin id="org.eclipse.gemini.dbaccess.mysql"/>
       <plugin id="org.eclipse.gemini.dbaccess.util"/>
       <plugin id="org.eclipse.gemini.ext.di"/>
       <plugin id="org.eclipse.gemini.jpa"/>
@@ -153,10 +150,7 @@
 
    <configurations>
       <plugin id="jOrdner.jpa" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.gemini.dbaccess.derby" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.gemini.dbaccess.h2" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.gemini.dbaccess.hsqldb" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.gemini.dbaccess.mysql" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.gemini.jpa" autoStart="true" startLevel="3" />
    </configurations>
 

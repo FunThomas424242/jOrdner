@@ -1,10 +1,10 @@
 package com.gh.jordner.gui.actions.test;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
-import org.eclipse.swtbot.swt.finder.keyboard.Keystrokes;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
-import org.eclipse.swtbot.swt.finder.waits.Conditions;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotMenu;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
 import org.junit.AfterClass;
@@ -37,8 +37,9 @@ public class QuitHandlerTest {
 		Assert.assertNotNull(exitMenu);
 		exitMenu.click();
 		SWTBotShell popup = bot.shell("Confirmation").activate();
-		bot.waitUntil(Conditions.shellIsActive("Confirmation"));
-		popup.pressShortcut(Keystrokes.CR);
+		assertNotNull(popup);
+		// bot.waitUntil(Conditions.shellIsActive("Confirmation"));
+		// bot.button("OK").click();
 
 	}
 

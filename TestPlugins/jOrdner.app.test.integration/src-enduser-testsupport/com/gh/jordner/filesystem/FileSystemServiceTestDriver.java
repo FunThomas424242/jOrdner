@@ -27,7 +27,7 @@ public class FileSystemServiceTestDriver {
 	public FileSystemServiceTestDriver() {
 		super();
 		fileService = new FileSystemService();
-		fileService.setVerzeichnisDAO(new VerzeichnisDAOMock());
+		fileService.setVerzeichnisDAO(new VerzeichnisDAOFake());
 	}
 
 	@TextSyntax("Hinzufügen eines neuen Verzeichnisses #1 zur Liste der verwalteten Verzeichnisse")

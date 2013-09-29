@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import org.junit.Assert;
 
 import com.gh.jordner.exceptions.DataAccessException;
-import com.gh.jordner.filesystem.VerzeichnisDAOMock;
+import com.gh.jordner.filesystem.VerzeichnisDAOFake;
 import com.gh.jordner.filsesystem.FileSystemService;
 import com.gh.jordner.jpa.filesystem.Verzeichnis;
 
@@ -26,7 +26,7 @@ public class TestSupport {
 	public TestSupport() {
 		super();
 		fileService = new FileSystemService();
-		fileService.setVerzeichnisDAO(new VerzeichnisDAOMock());
+		fileService.setVerzeichnisDAO(new VerzeichnisDAOFake());
 	}
 
 	@TextSyntax("Erstelle lokal das Verzeichnis #1")

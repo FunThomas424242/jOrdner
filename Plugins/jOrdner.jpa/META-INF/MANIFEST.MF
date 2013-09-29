@@ -5,8 +5,7 @@ Bundle-SymbolicName: jOrdner.jpa;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.h2;bundle-version="1.1.117",
- javax.persistence;bundle-version="[2.0.0,3.0.0)",
+Require-Bundle: javax.persistence;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.persistence.asm;bundle-version="3.3.1",
  org.eclipse.persistence.antlr;bundle-version="3.2.0",
  org.eclipse.persistence.jpa;bundle-version="2.4.2",
@@ -14,8 +13,7 @@ Require-Bundle: org.h2;bundle-version="1.1.117",
  org.eclipse.osgi;bundle-version="3.8.1",
  jOrdner.api;bundle-version="1.0.0",
  org.eclipse.e4.core.di;bundle-version="1.1.0",
- org.eclipse.gemini.dbaccess.h2;bundle-version="1.1.0",
- org.eclipse.gemini.dbaccess.derby;bundle-version="1.1.0",
+ org.eclipse.gemini.dbaccess.h2,
  org.eclipse.gemini.dbaccess.util;bundle-version="1.1.0",
  org.eclipse.gemini.ext.di;bundle-version="1.0.2",
  javax.inject;bundle-version="1.0.0",
