@@ -7,4 +7,5 @@ Bundle-Vendor: FunThomas424242
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: jOrdner.app;bundle-version="1.0.0",
  org.eclipse.swtbot.go,
- org.junit;resolution:=optional
+ org.junit;resolution:=optional,
+ org.eclipse.swtbot.swt.finder
