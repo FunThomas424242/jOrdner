@@ -40,7 +40,7 @@ public class QuitHandlerTest {
 			System.out.println("Close Dialog nicht geöffnet");
 		} else {
 			bot.waitUntil(Conditions.shellIsActive("Confirmation"));
-			bot.button("OK").click();
+			// bot.button("OK").click();
 		}
 
 	}
