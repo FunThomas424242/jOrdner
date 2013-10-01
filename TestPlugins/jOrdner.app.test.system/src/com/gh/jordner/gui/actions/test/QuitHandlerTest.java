@@ -45,4 +45,14 @@ public class QuitHandlerTest {
 
 	}
 
+	@Test
+	public void setDbPreference() {
+		final SWTBotMenu windowMenu = bot.menu("Fenster");
+		Assert.assertNotNull(windowMenu);
+		SWTBotMenu prefMenu = windowMenu.menu("Einstellungen");
+		Assert.assertNotNull(prefMenu);
+		prefMenu.click();
+
+	}
+
 }
