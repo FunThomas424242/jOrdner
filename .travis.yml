@@ -1,9 +1,13 @@
 language: java
+
 jdk:
   - openjdk7
+  
  env:
   - server=travis-ci BAR=bar
+  
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  
 script: "mvn -f ./Plugins/jOrdner.parent/pom.xml clean install"
