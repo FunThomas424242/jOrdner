@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: SWTBot
+Bundle-Name: Systemtest
 Bundle-SymbolicName: jOrdner.app.test.system
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: FunThomas424242
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: jOrdner.app;bundle-version="1.0.0",
+Require-Bundle: jOrdner.app,
  org.eclipse.swtbot.go,
- org.junit;resolution:=optional,
+ org.junit,
  org.eclipse.swtbot.swt.finder

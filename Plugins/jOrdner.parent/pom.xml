@@ -180,6 +180,16 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/technology/swtbot/snapshots/</url>
 		</repository>
+		<repository>
+			<id>eclipse-4.3-updates</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/4.3/</url>
+		</repository>
+		<repository>
+			<id>orbit-latest</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/</url>
+		</repository>
 
 		<!--repository> <id>org.projectusus.jfeet</id> <layout>p2</layout> <url>http://usus.github.com/JFeet</url> 
 			</repository> <repository> <id>org.swtchart</id> <layout>p2</layout> <url>http://usus.github.com/swtchart</url> 
@@ -195,7 +205,7 @@
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
 		<module>../jOrdner.app/pom.xml</module>
-		<module>../../TestPlugins/jOrdner.app.test.system/pom.xml</module>
+		<!--module>../../TestPlugins/jOrdner.app.test.system/pom.xml</module-->
 	</modules>
 
 
@@ -283,30 +293,30 @@
 						</artifact> </target -->
 					<environments>
 						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
+							<os>win32</os>
+							<ws>win32</ws>
 							<arch>x86</arch>
 						</environment>
 						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
+							<os>win32</os>
+							<ws>win32</ws>
 							<arch>x86_64</arch>
 						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
+						<!--environment>
+							<os>linux</os>
+							<ws>gtk</ws>
 							<arch>x86</arch>
 						</environment>
 						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
+							<os>linux</os>
+							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
-						</environment>
+						</environment-->
 					</environments>
 					<ignoreTychoRepositories>false</ignoreTychoRepositories>
 				</configuration>
@@ -338,6 +348,7 @@
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-maven-plugin</artifactId>
 					<version>${tycho-version}</version>
+					<extensions>true</extensions>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -414,6 +425,57 @@
 								<url>http://download.eclipse.org/eclipse/updates/4.2</url>
 							</repository>
 						</baselineRepositories>
+					</configuration>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>tree</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.1,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
 			</plugins>
