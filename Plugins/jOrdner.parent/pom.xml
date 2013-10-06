@@ -189,7 +189,7 @@
 		<repository>
 			<id>orbit-latest</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/</url>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/S20130914154012/repository/</url>
 		</repository>
 
 		<!--repository> <id>org.projectusus.jfeet</id> <layout>p2</layout> <url>http://usus.github.com/JFeet</url> 
