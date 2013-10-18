@@ -26,6 +26,7 @@
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="jOrdner.api"/>
+      <plugin id="jOrdner.app"/>
       <plugin id="jOrdner.jpa"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
@@ -40,6 +41,7 @@
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.derby"/>
       <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.ant.optional.junit" fragment="true"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
@@ -65,6 +67,7 @@
       <plugin id="org.eclipse.core.resources.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.core.runtime.compatibility"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.e4.core.commands"/>
@@ -110,7 +113,6 @@
       <plugin id="org.eclipse.objectteams.otequinox.hook" fragment="true"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.services"/>
-      <plugin id="org.eclipse.osgi.util"/>
       <plugin id="org.eclipse.persistence.antlr"/>
       <plugin id="org.eclipse.persistence.asm"/>
       <plugin id="org.eclipse.persistence.core"/>
