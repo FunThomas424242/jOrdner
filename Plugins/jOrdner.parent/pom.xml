@@ -16,6 +16,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform-version-name>kepler</platform-version-name>
 		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
+		<!-- start parameters eclipserun -->
+		<!--features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group
+		</features>
+		<sites>${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/technology/m2e/releases,${eclipse.mirror.url}/eclipse/updates/4.3
+		</sites-->
 	</properties>
 
 	<profiles>
@@ -168,7 +173,7 @@
 		</repository>
 		<repository>
 			<id>nat-spec-repo</id>
-			<!-- layout>p2</layout -->
+			<layout>p2-artifacts</layout>
 			<url>http://www.nat-spec.com/update</url>
 		</repository>
 		<repository>
@@ -205,7 +210,9 @@
 		<module>../jOrdner.platform/pom.xml</module>
 		<module>../jOrdner.api/pom.xml</module>
 		<module>../jOrdner.jpa/pom.xml</module>
+		<module>../jOrdner.feature/pom.xml</module>
 		<module>../jOrdner.app/pom.xml</module>
+		<module>../jOrdner.site/pom.xml</module>
 		<!--module>../../TestPlugins/jOrdner.app.test.system/pom.xml</module -->
 	</modules>
 
@@ -227,6 +234,7 @@
 								<echo>Displaying value of pom.xml element</echo>
 								<echo>[property.useUIHarness] ${useUIHarness}</echo>
 								<echo>[property.useUIThread] ${useUIThread}</echo>
+								<echo>[var.artifacts] ${project.artifacts}</echo>
 							</tasks>
 						</configuration>
 					</execution>
@@ -319,9 +327,13 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<configuration>
-					<!--target> <artifact> <groupId>gh.funthomas424242.jOrdner</groupId> 
-						<artifactId>jOrdner.platform</artifactId> <version>${project.version}</version> 
-						</artifact> </target -->
+					<!--target>
+						<artifact>
+							<groupId>gh.funthomas424242.jOrdner</groupId>
+							<artifactId>jOrdner.platform</artifactId>
+							<version>${project.version}</version>
+						</artifact>
+					</target-->
 					<environments>
 						<environment>
 							<os>win32</os>
@@ -405,9 +417,21 @@
 			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-eclipserun-plugin</artifactId>
-				<!--configuration> <repositories> <repository> <id>jOrdner.repo</id> 
-					<layout>p2</layout> <url>file:///${basedir}/../../Plugins/jOrdner.app/target/repository/</url> 
-					</repository> </repositories> </configuration -->
+				<version>${tycho-extras-version}</version>
+				<!--configuration> <argLine>-Declipse.p2.mirrors=false</argLine> <appArgLine>-consoleLog 
+					-application org.eclipse.equinox.p2.director -nosplash -destination ${build.destination} 
+					-repository ${sites} -installIUs ${features}</appArgLine> <dependencies> 
+					<dependency> <artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.p2.repository</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.p2.touchpoint.natives</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.p2.touchpoint.eclipse</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.p2.artifact.repository 
+					</artifactId> <type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.p2.director.app</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.equinox.ds</artifactId> 
+					<type>eclipse-plugin</type> </dependency> <dependency> <artifactId>org.eclipse.core.net</artifactId> 
+					<type>eclipse-plugin</type> </dependency> </dependencies> </configuration 
+					> <executions> <execution> <goals> <goal>eclipse-run</goal> </goals> <phase>compile</phase> 
+					</execution> </executions -->
 			</plugin>
 		</plugins>
 
@@ -486,6 +510,11 @@
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>target-platform-configuration</artifactId>
 					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-p2-extras-plugin</artifactId>
+					<version>${tycho-extras-version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho.extras</groupId>
