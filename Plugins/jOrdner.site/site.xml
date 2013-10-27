@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/jOrdner.feature_1.0.0.201310271930.jar" id="jOrdner.feature" version="1.0.0.201310271930">
+      <category name="funthomas424242"/>
+   </feature>
+   <category-def name="funthomas424242" label="FunThomas424242"/>
+</site>
