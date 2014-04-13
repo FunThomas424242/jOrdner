@@ -17,7 +17,8 @@ Require-Bundle: jOrdner.api,
  org.eclipse.gemini.ext.di,
  javax.inject,
  org.eclipse.e4.core.di.extensions,
- org.eclipse.osgi;bundle-version="3.9.1"
+ org.eclipse.osgi
 Export-Package: com.gh.jordner.jpa.filesystem;uses:="com.gh.jordner.api"
 Meta-Persistence: META-INF/persistence.xml 
+Bundle-ActivationPolicy: lazy
 
