@@ -13,6 +13,16 @@
 
    <windowImages/>
 
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.opcoach.e4.preferences"/>
@@ -24,7 +34,8 @@
       <plugin id="javax.inject"/>
       <plugin id="javax.persistence"/>
       <plugin id="javax.xml"/>
-      <plugin id="jpa-preferences.plugin"/>
+      <plugin id="jpa.preferences"/>
+      <plugin id="jpa.preferences.plugin"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
@@ -132,6 +143,9 @@
 
    <configurations>
       <plugin id="jOrdner.jpa" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.gemini.dbaccess.h2" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.gemini.jpa" autoStart="true" startLevel="3" />
    </configurations>
