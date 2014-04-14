@@ -24,6 +24,9 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9TvC1EeKZWoEocgebgw" label="Save" iconURI="platform:/plugin/jOrdner.app/icons/save_edit.gif" command="_iFi9RfC1EeKZWoEocgebgw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9T_C1EeKZWoEocgebgw" label="Quit" command="_iFiWPPC1EeKZWoEocgebgw"/>
       </children>
+      <children xsi:type="menu:Menu" xmi:id="_GaMUYMQHEeOQ4YEHY5bIyw" elementId="jordner.app.menu.0" label="Window">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_U7urMMQHEeOQ4YEHY5bIyw" elementId="jordner.app.handledmenuitem.0" command="_n-6BMMQHEeOQ4YEHY5bIyw"/>
+      </children>
       <children xsi:type="menu:Menu" xmi:id="_iFi9UPC1EeKZWoEocgebgw" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iFi9UfC1EeKZWoEocgebgw" label="About" command="_iFi9SPC1EeKZWoEocgebgw"/>
       </children>
@@ -39,6 +42,7 @@
   <handlers xmi:id="_iFi9Q_C1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.openCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.AddVerzeichnisHandler" command="_iFi9QvC1EeKZWoEocgebgw"/>
   <handlers xmi:id="_iFi9RvC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.saveCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.folderlist.SaveVerzeichnisListHandler" command="_iFi9RfC1EeKZWoEocgebgw"/>
   <handlers xmi:id="_iFi9SfC1EeKZWoEocgebgw" elementId="jOrdnerApp.handler.aboutCommand" contributionURI="bundleclass://jOrdner.app/com.gh.jordner.gui.actions.AboutHandler" command="_iFi9SPC1EeKZWoEocgebgw"/>
+  <handlers xmi:id="_9JwjcMQJEeOQ4YEHY5bIyw" elementId="jordner.app.handler.0" contributionURI="bundleclass://com.opcoach.e4.preferences/com.opcoach.e4.preferences.handlers.E4PreferencesHandler" command="_n-6BMMQHEeOQ4YEHY5bIyw"/>
   <bindingTables xmi:id="_iFi9QPC1EeKZWoEocgebgw" bindingContext="_iFiWOfC1EeKZWoEocgebgw">
     <bindings xmi:id="_iFi9QfC1EeKZWoEocgebgw" keySequence="M1+Q" command="_iFiWPPC1EeKZWoEocgebgw"/>
     <bindings xmi:id="_iFi9RPC1EeKZWoEocgebgw" keySequence="M1+O" command="_iFi9QvC1EeKZWoEocgebgw"/>
@@ -54,6 +58,7 @@
   <commands xmi:id="_iFi9RfC1EeKZWoEocgebgw" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_iFi9SPC1EeKZWoEocgebgw" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_p3oVQAUIEeOlU7k-e1eZ_g" elementId="jordner.app.command.delete" commandName="deleteCommand"/>
+  <commands xmi:id="_n-6BMMQHEeOQ4YEHY5bIyw" elementId="org.eclipse.ui.window.preferences" commandName="Preferences"/>
   <addons xmi:id="_iFiWMvC1EeKZWoEocgebgw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_iFiWM_C1EeKZWoEocgebgw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_iFiWNPC1EeKZWoEocgebgw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

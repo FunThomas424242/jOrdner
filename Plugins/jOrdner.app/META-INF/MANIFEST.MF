@@ -17,7 +17,8 @@ Require-Bundle: jOrdner.api,
  org.eclipse.e4.ui.di,
  org.eclipse.e4.core.contexts,
  org.eclipse.e4.core.services,
- org.eclipse.e4.ui.workbench.swt
+ org.eclipse.e4.ui.workbench.swt,
+ com.opcoach.e4.preferences
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: javax.annotation,
  javax.inject
