@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+  <extension
+         point="com.opcoach.e4.preferences.e4PreferencePages">
+      <page
+            class="jordner.jpa.preferences.JPAPreferencePage"
+            id="jordner.jpa.preferences.JPAPreferencePage"
+            name="JPA">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="jordner.jpa.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

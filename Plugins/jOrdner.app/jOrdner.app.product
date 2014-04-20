@@ -34,8 +34,6 @@
       <plugin id="javax.inject"/>
       <plugin id="javax.persistence"/>
       <plugin id="javax.xml"/>
-      <plugin id="jpa.preferences"/>
-      <plugin id="jpa.preferences.plugin"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
@@ -137,8 +135,6 @@
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="osgi.enterprise"/>
-      <plugin id="swtext.plugin"/>
-      <plugin id="testapp"/>
    </plugins>
 
    <configurations>

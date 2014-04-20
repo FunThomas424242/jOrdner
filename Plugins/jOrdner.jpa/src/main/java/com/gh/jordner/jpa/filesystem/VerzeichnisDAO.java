@@ -12,8 +12,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import jpa.preferences.JPADefaults;
-import jpa.preferences.PreferenceConstants;
+import jordner.jpa.preferences.JPADefaults;
+import jordner.jpa.preferences.PreferenceConstants;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.di.extensions.Preference;
@@ -26,7 +26,7 @@ public class VerzeichnisDAO {
 
     @Inject
     @GeminiPersistenceContext(unitName = JPADefaults.JPA_UNIT, properties = {
-            @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, valuePref = @Preference("jpa.preferences.JPAPreferencePage."
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, valuePref = @Preference("jpa.preferences."
                     + PreferenceConstants.P_JDBC_USERNAME)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, valuePref = @Preference(PreferenceConstants.P_JDBC_PASSWORD)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, valuePref = @Preference(PreferenceConstants.P_JDBC_DRIVER)),

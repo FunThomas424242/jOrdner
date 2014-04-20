@@ -18,8 +18,11 @@ Require-Bundle: jOrdner.api,
  javax.inject,
  org.eclipse.e4.core.di.extensions,
  org.eclipse.osgi,
- jpa.preferences
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.opcoach.e4.preferences
 Export-Package: com.gh.jordner.jpa.filesystem;uses:="com.gh.jordner.api"
 Meta-Persistence: META-INF/persistence.xml 
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: jordner.jpa.osgi.Activator
 
