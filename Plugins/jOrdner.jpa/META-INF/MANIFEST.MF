@@ -20,7 +20,9 @@ Require-Bundle: jOrdner.api,
  org.eclipse.osgi,
  org.eclipse.ui,
  org.eclipse.core.runtime,
- com.opcoach.e4.preferences
+ com.opcoach.e4.preferences,
+ org.eclipse.e4.ui.workbench.swt,
+ org.eclipse.e4.ui.model.workbench
 Export-Package: com.gh.jordner.jpa.filesystem;uses:="com.gh.jordner.api"
 Meta-Persistence: META-INF/persistence.xml 
 Bundle-ActivationPolicy: lazy

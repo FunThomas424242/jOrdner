@@ -40,6 +40,11 @@ public class JPAPreferencePage extends FieldEditorPreferencePage implements
 
     @Override
     protected void createFieldEditors() {
+        addField(new RadioGroupFieldEditor(
+                PreferenceConstants.P_DEFAULT_PROVIDER, "Use Defaults of", 1,
+                new String[][] { { "None", "none" }, { "H2", "h2" } },
+                getFieldEditorParent()));
+
         addField(new StringFieldEditor(PreferenceConstants.P_JPA_UNITNAME,
                 "JPA Unit Name:", getFieldEditorParent()));
         addField(new StringFieldEditor(PreferenceConstants.P_JDBC_USERNAME,
@@ -72,5 +77,4 @@ public class JPAPreferencePage extends FieldEditorPreferencePage implements
                 getFieldEditorParent()));
 
     }
-
 }
