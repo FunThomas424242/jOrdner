@@ -23,6 +23,16 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         store.setDefault(PreferenceConstants.P_JDBC_URL, "");
         store.setDefault(PreferenceConstants.P_JDBC_USERNAME, "");
         store.setDefault(PreferenceConstants.P_JDBC_PASSWORD, "");
+
+        store.setDefault(PreferenceConstants.P_JPA_DDL_GENERATION,
+                "drop-and-create-tables");
+        store.setDefault(PreferenceConstants.P_JPA_DDL_GENERATION_MODE,
+                "database");
+
+        store.setDefault(PreferenceConstants.P_JPA_WAEVING, "false");
+        store.setDefault(PreferenceConstants.P_JPA_WAEVING_INTERNAL, "false");
+
+        store.setDefault(PreferenceConstants.P_JPA_LOGLEVEL, "FINE");
     }
 
 }

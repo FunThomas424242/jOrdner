@@ -53,7 +53,7 @@ public class JPAPreferencePage extends FieldEditorPreferencePage implements
         addField(new RadioGroupFieldEditor(PreferenceConstants.P_JPA_LOGLEVEL,
                 "DB Log Level", 1, new String[][] { { "&ERROR", "error" },
                         { "&DEBUG", "debug" }, { "&INFO", "info" },
-                        { "&FINEST", "finest" } }, getFieldEditorParent()));
+                        { "&FINE", "FINE" } }, getFieldEditorParent()));
 
         addField(new RadioGroupFieldEditor(
                 PreferenceConstants.P_JPA_WAEVING_INTERNAL,
@@ -63,7 +63,7 @@ public class JPAPreferencePage extends FieldEditorPreferencePage implements
         addField(new RadioGroupFieldEditor(
                 PreferenceConstants.P_JPA_DDL_GENERATION, "DDL Generation", 1,
                 new String[][] { { "&None", "none" },
-                        { "&DROP & CREATE", "dropcreate" }, },
+                        { "&DROP & CREATE", "drop-and-create-tables" }, },
                 getFieldEditorParent()));
         addField(new RadioGroupFieldEditor(
                 PreferenceConstants.P_JPA_DDL_GENERATION_MODE,

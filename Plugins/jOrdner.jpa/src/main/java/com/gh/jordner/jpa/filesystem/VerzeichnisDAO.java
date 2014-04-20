@@ -30,18 +30,11 @@ public class VerzeichnisDAO {
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, valuePref = @Preference(PreferenceConstants.P_JDBC_PASSWORD)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, valuePref = @Preference(PreferenceConstants.P_JDBC_DRIVER)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, valuePref = @Preference(PreferenceConstants.P_JDBC_URL)),
-            @GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, value = "FINE")
-    // @GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING,
-    // value = "false"),
-    // @GeminiPersistenceProperty(name =
-    // PersistenceUnitProperties.WEAVING_INTERNAL, value = "false"),
-    // @GeminiPersistenceProperty(name =
-    // PersistenceUnitProperties.DDL_GENERATION, value =
-    // PersistenceUnitProperties.DROP_AND_CREATE),
-    // @GeminiPersistenceProperty(name =
-    // PersistenceUnitProperties.DDL_GENERATION_MODE, value =
-    // PersistenceUnitProperties.DDL_DATABASE_GENERATION)
-    })
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.LOGGING_LEVEL, valuePref = @Preference(PreferenceConstants.P_JPA_LOGLEVEL)),
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING, valuePref = @Preference(PreferenceConstants.P_JPA_WAEVING)),
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.WEAVING_INTERNAL, valuePref = @Preference(PreferenceConstants.P_JPA_WAEVING_INTERNAL)),
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION, valuePref = @Preference(PreferenceConstants.P_JPA_DDL_GENERATION)),
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.DDL_GENERATION_MODE, valuePref = @Preference(PreferenceConstants.P_JPA_DDL_GENERATION_MODE)) })
     private EntityManager em;
 
     public void insert(Verzeichnis dataObj) throws SQLException {
