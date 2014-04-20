@@ -27,11 +27,11 @@
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <!-- TRICKY: Using an in memory db does not work. For some obscure reason 
-                        that results in an SQL exception. So use a db in the temp area. 
+                        that results in an SQL exception. So use a db in the temp area. -->
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/database" />
-            <property name="javax.persistence.jdbc.user" value="sa" />
+            <property name="javax.persistence.jdbc.user" value="sab" />
             <property name="javax.persistence.jdbc.password" value="" />
             
             
@@ -41,7 +41,7 @@
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
             <property name="eclipselink.ddl-generation.output-mode" value="database" />
         </properties>
-        -->
+        
     </persistence-unit>
 
 	<!-- if the properties are read from preference pages -->

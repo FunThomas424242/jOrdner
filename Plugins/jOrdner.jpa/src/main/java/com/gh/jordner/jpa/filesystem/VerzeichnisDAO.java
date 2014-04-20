@@ -26,8 +26,7 @@ public class VerzeichnisDAO {
 
     @Inject
     @GeminiPersistenceContext(unitName = JPADefaults.JPA_UNIT, properties = {
-            @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, valuePref = @Preference("jpa.preferences."
-                    + PreferenceConstants.P_JDBC_USERNAME)),
+            @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_USER, valuePref = @Preference(PreferenceConstants.P_JDBC_USERNAME)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_PASSWORD, valuePref = @Preference(PreferenceConstants.P_JDBC_PASSWORD)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_DRIVER, valuePref = @Preference(PreferenceConstants.P_JDBC_DRIVER)),
             @GeminiPersistenceProperty(name = PersistenceUnitProperties.JDBC_URL, valuePref = @Preference(PreferenceConstants.P_JDBC_URL)),

@@ -17,8 +17,12 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
      */
     public void initializeDefaultPreferences() {
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-        store.setDefault(PreferenceConstants.P_BOOLEAN, true);
-        // TODO
+        store.setDefault(PreferenceConstants.P_JPA_UNITNAME,
+                JPADefaults.JPA_UNIT);
+        store.setDefault(PreferenceConstants.P_JDBC_DRIVER, "");
+        store.setDefault(PreferenceConstants.P_JDBC_URL, "");
+        store.setDefault(PreferenceConstants.P_JDBC_USERNAME, "");
+        store.setDefault(PreferenceConstants.P_JDBC_PASSWORD, "");
     }
 
 }
