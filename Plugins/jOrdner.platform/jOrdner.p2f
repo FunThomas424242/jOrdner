@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?p2f version='1.0.0'?>
+<p2f version='1.0.0'>
+  <ius size='33'>
+    <iu id='org.apache.log4j' name='Apache Jakarta log4j Plug-in' version='1.2.15.v201012070815'>
+      <repositories size='3'>
+        <repository location='http://portal.genuitec.com:1030/site/eclipse-discovery/4.3.1'/>
+        <repository location='http://download.eclipse.org/releases/kepler'/>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.apache.log4j.source' name='Apache Jakarta log4j Source Bundle' version='1.2.15.v201012070815'>
+      <repositories size='3'>
+        <repository location='http://portal.genuitec.com:1030/site/eclipse-discovery/4.3.1'/>
+        <repository location='http://download.eclipse.org/releases/kepler'/>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.b3.aggregator.editor.feature.feature.group' name='b3 Aggregator Editor (Incubation)' version='0.3.0.v20131116-1126'>
+      <repositories size='2'>
+        <repository location='http://download.eclipse.org/modeling/emft/b3/updates-4.3'/>
+        <repository location='https://hudson.eclipse.org/hudson/job/emft-b3-build/lastSuccessfulBuild/artifact/b3.p2.repository/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.b3.p2.maven.indexer.feature.feature.group' name='b3 and p2 - Nexus Indexer for Maven (Incubation)' version='0.3.0.v20131115-1610'>
+      <repositories size='2'>
+        <repository location='http://download.eclipse.org/modeling/emft/b3/updates-4.3'/>
+        <repository location='https://hudson.eclipse.org/hudson/job/emft-b3-build/lastSuccessfulBuild/artifact/b3.p2.repository/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.buckminster.core.feature.feature.group' name='Buckminster - Core' version='1.6.0.v20131003-1606'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/tools/buckminster/updates-4.3'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.buckminster.git.feature.feature.group' name='Buckminster - Git Support' version='1.6.0.v20130614-0659'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/tools/buckminster/updates-4.3'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.buckminster.maven.feature.feature.group' name='Buckminster - Maven support' version='1.6.0.v20130317-0829'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/tools/buckminster/updates-4.3'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.tools.css.spy.feature.feature.group' name='E4 CSS Spy (Incubation)' version='0.14.0.v20130814-1230'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.tools.css.spy.feature.source.feature.group' name='E4 CSS Spy (Incubation) Developer Resources' version='0.14.0.v20130814-1230'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.tools.event.spy.feature.feature.group' name='E4 Event Spy (Incubation)' version='0.15.0.v20131124-2209'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.tools.event.spy.feature.source.feature.group' name='E4 Event Spy (Incubation) Developer Resources' version='0.15.0.v20131124-2209'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.core.tools.feature.feature.group' name='Eclipse e4 Tools (Incubation)' version='0.14.0.v20140116-1126'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.e4.core.tools.feature.source.feature.group' name='Eclipse e4 Tools Source (Incubation)' version='0.14.0.v20140116-1126'>
+      <repositories size='1'>
+        <repository location='http://download.vogella.com/kepler/e4tools'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.gemini.dbaccess.h2.feature.feature.group' name='Gemini DBAccess for H2' version='1.1.0.RELEASE'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/gemini/updates/dbaccess/1.1.0'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.gemini.ext.di.feature.feature.group' name='Gemini e4 DI' version='1.1.2.201308292016'>
+      <repositories size='1'>
+        <repository location='http://p2.mukis.de/org.eclipse.gemini.ext.di/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.gemini.jpa.feature.feature.group' name='Gemini JPA' version='1.2.0.M1'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/gemini/jpa/updates'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.gemini.jpa.samples.feature.feature.group' name='Gemini JPA Samples' version='1.2.0.M1'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/gemini/jpa/updates'/>
+      </repositories>
+    </iu>
+    <iu id='org.hamcrest.library' name='Hamcrest Library of Additional Matchers' version='1.3.0.v201305281000'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.hamcrest.library.source' name='Hamcrest Library of Additional Matchers Source' version='1.3.0.v201305281000'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.jbehave.eclipse.feature.feature.group' name='JBehave Eclipse' version='1.0.0.20140420-0816'>
+      <repositories size='1'>
+        <repository location='http://jbehave.org/reference/eclipse/updates/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.m2e.wtp.jpa.feature.feature.group' name='m2e-wtp - JPA configurator for WTP (Optional)' version='1.0.1.e43-20130911-1546'>
+      <repositories size='2'>
+        <repository location='http://portal.genuitec.com:1030/site/eclipse-discovery/4.3.1'/>
+        <repository location='http://download.eclipse.org/releases/kepler'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.m2e.wtp.feature.feature.group' name='m2e-wtp - Maven Integration for WTP' version='1.0.1.20130911-1545'>
+      <repositories size='2'>
+        <repository location='http://portal.genuitec.com:1030/site/eclipse-discovery/4.3.1'/>
+        <repository location='http://download.eclipse.org/releases/kepler'/>
+      </repositories>
+    </iu>
+    <iu id='de.devboost.natspec.feature.group' name='NatSpec' version='2.1.1.v201402041855'>
+      <repositories size='1'>
+        <repository location='http://www.nat-spec.com/update'/>
+      </repositories>
+    </iu>
+    <iu id='ch.netcetera.eclipse.projectconfig.feature.feature.group' name='Remote Project Properties Feature' version='3.1.3'>
+      <repositories size='1'>
+        <repository location='http://netceteragroup.github.io/eclipse-team-etceteras/updatesite/'/>
+      </repositories>
+    </iu>
+    <iu id='ch.netcetera.eclipse.workspaceconfig.feature.feature.group' name='Remote Workspace Configuration Feature' version='3.1.3'>
+      <repositories size='1'>
+        <repository location='http://netceteragroup.github.io/eclipse-team-etceteras/updatesite/'/>
+      </repositories>
+    </iu>
+    <iu id='de.fu_berlin.inf.dpp.feature.feature.group' name='Saros' version='13.12.6'>
+      <repositories size='1'>
+        <repository location='http://dpp.sf.net/update'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.forms.feature.group' name='SWTBot for Eclipse Forms Testing' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.eclipse.feature.group' name='SWTBot for Eclipse Testing' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.eclipse.gef.feature.group' name='SWTBot for GEF Testing' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.feature.group' name='SWTBot for SWT Testing' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.ide.feature.group' name='SWTBot IDE Features' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.swtbot.generator.feature.feature.group' name='SWTBot Recorder and Test Generator (Provisional)' version='2.2.1.201402241301'>
+      <repositories size='1'>
+        <repository location='http://download.eclipse.org/technology/swtbot/releases/latest/'/>
+      </repositories>
+    </iu>
+    <iu id='org.sonatype.tycho.m2e.feature.feature.group' name='Tycho Project Configurators' version='0.7.0.201309291400'>
+      <repositories size='1'>
+        <repository location='http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.7.0/N/0.7.0.201309291400/'/>
+      </repositories>
+    </iu>
+  </ius>
+</p2f>
